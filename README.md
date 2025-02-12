@@ -1,6 +1,6 @@
 # Experiment-1
 
-**DC,Ac,Transient Analysis of Common Source Amplifier**
+**DC,AC,Transient Analysis of Common Source Amplifier**
 
 ![Image](https://github.com/user-attachments/assets/d1eddf4d-5823-43fa-805d-59d048a61441)
 
@@ -20,8 +20,8 @@ This report presents the DC analysis, AC analysis, Transient analysis of a commo
    Amplitude: 50mV <br>
    Frequency: 1kHz <br> 
 
-**DC Analysis**
-Simulation: <br><br>
+**DC Simulation**
+ <br><br>
 ![Image](https://github.com/user-attachments/assets/506240ae-f9d3-4c51-b156-105e670a6af2) <br><br>
 <p> From the simulation:
 V<sub>out</sub> = 1.64727V, V<sub>in</sub> = 0.9V, I<sub>d</sub> = 0.00015A.
