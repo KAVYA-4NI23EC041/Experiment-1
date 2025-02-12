@@ -42,7 +42,7 @@ Since the calculated current does not match the simulated value, maintain the MO
 <table> 
 <tr>
  <th><b>Length</b></th>
- <th><b>Width</b>b></th>
+ <th><b>Width</b></th>
  <th><b>I<sub>d</sub></b></th>
 </tr>
 <tr>
