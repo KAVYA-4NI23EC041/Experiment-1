@@ -11,9 +11,9 @@ This report presents the DC analysis, AC analysis, Transient analysis of a commo
     
 **Model** : CMOSN <br>
 **MOSFET Length** : 180nm <br>
-**MOSFET Width** : 0.209253um <br>
+**MOSFET Width** : 0.209253µm <br>
 **Threshold Voltage** : 0.366V <br>
-**Resistor** : 2.751891k &#8486 <br>
+**Resistor** : 2.751891k&#8486  <br>
 **Supply Voltage** : 1.8V <br>
 **Signal Genertor**: <br>
    DC Voltage: 0.9V <br> 
