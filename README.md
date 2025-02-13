@@ -4,21 +4,21 @@
 
 ![Image](https://github.com/user-attachments/assets/d1eddf4d-5823-43fa-805d-59d048a61441)
 
-This report presents the DC analysis, AC analysis, Transient analysis of a common-source NMOS amplifier. The circuit consists of an NMOS transistor with a resistive load, powered by a 1.8V supply. The objective of this analysis is to determine the DC biasing conditions, gain and output impedence using Transient analysis, and to find frequency response using AC  analysis.The simulation results are obtained using LTspice, and theoretical calculations are verified against the observed values.
+<p>This report presents the DC analysis, AC analysis, Transient analysis of a common-source NMOS amplifier. The objective of this analysis is to determine the DC biasing conditions, gain and output impedence using Transient analysis, and to find frequency response using AC analysis.</p>
 
 **Component Details**
   <p>  The circuit consists of a TSMC 180nm NMOS transistor (CMOSN), a drain resistor and two voltage sources. The drain resistor limits the current through the transistor and affects the small-signal gain. The NMOS transistor operates in saturation region, making it suitable for amplification </p>
     
-**Model** : CMOSN <br>
+**Model** : CMOSN <br> 
 **MOSFET Length** : 180nm <br>
 **MOSFET Width** : 0.209253µm <br>
 **Threshold Voltage** : 0.366V <br>
 **Resistor** : 2.751891k&#8486  <br>
 **Supply Voltage** : 1.8V <br>
 **Signal Genertor**: <br>
-   DC Voltage: 0.9V <br> 
-   Amplitude: 50mV <br>
-   Frequency: 1kHz <br> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DC Voltage: 0.9V <br> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amplitude: 50mV <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Frequency: 1kHz <br> 
 
 **DC Simulation**
  <br><br>
@@ -66,3 +66,19 @@ Since the calculated current does not match the simulated value, maintain the MO
     <td>5.555*10<sup>-5</sup></td>
 </tr>
 </table>
+<br>
+The DC operating point analysis confirms that the NMOS transistor operates in the saturation region with 
+I<sub>d</sub> ≈ 55.5μA. <br>
+V<sub>ds</sub> = V<sub>d</sub> - V<sub>s</sub>  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0.15 - 0 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0.15V <br>
+V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.9 - 0.36 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.54V <br>
+i.e V<sub>ds</sub> > ( V<sub>gs</sub> - V<sub>th</sub>) <br>
+<br><br>
+**Transient Analysis**
+Transient analysis is a time-domain simulation technique used to observe the circuit's response to time-varying inputs.Find the gain and output impedence of the circuit.<br>
+For the same circuit, perform the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, and amplitude 50mV, and frequency = 1kHz <br>
+And the AC amplitude as 1V. <br>
+In the configure analysis select stop time as 5ms.
