@@ -76,8 +76,9 @@ V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.9 - 0.36 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.54V <br>
 i.e V<sub>ds</sub> > ( V<sub>gs</sub> - V<sub>th</sub>) <br>
-<br><br>
-**Transient Analysis**
+<br>
+
+**Transient Analysis** <br>
 Transient analysis is a time-domain simulation technique used to observe the circuit's response to time-varying inputs.Find the gain and output impedence of the circuit.<br>
 For the same circuit, perform the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, and amplitude 50mV, and frequency = 1kHz <br>
 And the AC amplitude as 1V. <br>
