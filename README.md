@@ -13,7 +13,7 @@
 **MOSFET Length** : 180nm <br>
 **MOSFET Width** : 0.209253µm <br>
 **Threshold Voltage** : 0.366V <br>
-**Resistor** : 2.751891k  <br>
+**Resistor** : 2.751891kΩ  <br>
 **Supply Voltage** : 1.8V <br>
 **Signal Genertor**: <br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DC Voltage: 0.9V <br> 
@@ -89,4 +89,4 @@ From calculations:
  gm = 2(I<sub>d</sub>)/(V<sub>ov</sub>)  &nbsp;&nbsp;&nbsp; i.e  V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub>  <br>
  &nbsp;&nbsp; = 2(55.5μ) / ( 0.9 - 0.3) <br>
  &nbsp;&nbsp; = 1.8V <br><br>
- R<sub>out</sub> = R<sub>d</sub> = 2.751K <br> 
+ R<sub>out</sub> = R<sub>d</sub> = 2.751KΩ <br> 
