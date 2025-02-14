@@ -1,6 +1,12 @@
 # Experiment-1
 
-## **DC,AC,Transient Analysis of Common Source Amplifier**
+## **DC,AC,Transient Analysis of Common Source Amplifier** <br>
+<p>The Common Source (CS) Amplifier is a fundamental building block in analog circuit design, widely used for voltage amplification. In this circuit, an NMOS transistor operates as the active device, with a passive resistor (R<sub>d</sub>) as the load. The circuit is biased using a DC voltage source (V<sub>d</sub>), and an AC input signal is applied to the gate.</p> 
+<p> <ins>Key components and their roles:</ins> <br>
+1. R<sub>d</sub> (Drain Resistor): Provides the required voltage drop to amplify the signal. <br>
+2. W (Transistor Width): Affects the transconductance (gm), influencing gain and bandwidth.<br>
+3. V<sub>d</sub> (Drain Supply Voltage): Provides DC biasing for the NMOS transistor. <br>
+4. AC Input (SINE source): The test signal used to analyze circuit response. </p>
 
 ![Image](https://github.com/user-attachments/assets/d1eddf4d-5823-43fa-805d-59d048a61441)
 
