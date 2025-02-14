@@ -81,12 +81,18 @@ And the AC amplitude as 1V. <br>
 In the configure analysis select stop time as 5ms. <br><br>
 ![Image](https://github.com/user-attachments/assets/248274f7-e1f2-401a-ad52-6181a2053d9e) <br>
 From the graph: <br>
- We can observe 180&deg; phase shift in the output voltage <br>
+ We can observe **180&deg;** phase shift in the amplified output voltage wave  <br>
 &nbsp;&nbsp;&nbsp; gain = V<sub>out</sub> / V<sub>in</sub> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.66/0.9  = 1.84V <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.66/0.9  = 1.84 <br>
 <br>
 From calculations:
  gm = 2(I<sub>d</sub>)/(V<sub>ov</sub>)  &nbsp;&nbsp;&nbsp; i.e  V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub>  <br>
  &nbsp;&nbsp; = 2(55.5μ) / ( 0.9 - 0.3) <br>
- &nbsp;&nbsp; = 1.8V <br><br>
+ &nbsp;&nbsp; = 1.8 <br><br>
  R<sub>out</sub> = R<sub>d</sub> = 2.751KΩ <br> 
+ Overall gain : A<sub>v</sub> = gm * R<sub>out</sub>  <br>
+ &nbsp;&nbsp;&nbsp; = 1.84 * 2.751K = 4951.8 <br><br> 
+
+ **AC Analysis**<br>
+ 
+ 
