@@ -13,7 +13,7 @@
 **MOSFET Length** : 180nm <br>
 **MOSFET Width** : 0.209253µm <br>
 **Threshold Voltage** : 0.366V <br>
-**Resistor** : 2.751891k&#8486  <br>
+**Resistor** : 2.751891k  <br>
 **Supply Voltage** : 1.8V <br>
 **Signal Genertor**: <br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DC Voltage: 0.9V <br> 
@@ -78,4 +78,15 @@ i.e V<sub>ds</sub> > ( V<sub>gs</sub> - V<sub>th</sub>) <br>
 Transient analysis is a time-domain simulation technique used to observe the circuit's response to time-varying inputs.<br> For this experiment find the gain and output impedence of the circuit.
 For the same circuit, perform the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, and amplitude 50mV, and frequency = 1kHz <br>
 And the AC amplitude as 1V. <br>
-In the configure analysis select stop time as 5ms.
+In the configure analysis select stop time as 5ms. <br><br>
+![Image](https://github.com/user-attachments/assets/248274f7-e1f2-401a-ad52-6181a2053d9e) <br>
+From the graph: <br>
+ We can observe 180&deg; phase shift in the output voltage <br>
+&nbsp;&nbsp;&nbsp; gain = V<sub>out</sub> / V<sub>in</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.66/0.9  = 1.84V <br>
+<br>
+From calculations:
+ gm = 2(I<sub>d</sub>)/(V<sub>ov</sub>)  &nbsp;&nbsp;&nbsp; i.e  V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub>  <br>
+ &nbsp;&nbsp; = 2(55.5μ) / ( 0.9 - 0.3) <br>
+ &nbsp;&nbsp; = 1.8V <br><br>
+ R<sub>out</sub> = R<sub>d</sub> = 2.751K <br> 
