@@ -75,7 +75,7 @@ i.e V<sub>ds</sub> > ( V<sub>gs</sub> - V<sub>th</sub>) <br>
 <br>
 
 **Transient Analysis** <br>
-Transient analysis is a time-domain simulation technique used to observe the circuit's response to time-varying inputs.Find the gain and output impedence of the circuit.<br>
+Transient analysis is a time-domain simulation technique used to observe the circuit's response to time-varying inputs.<br> For this experiment find the gain and output impedence of the circuit.
 For the same circuit, perform the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, and amplitude 50mV, and frequency = 1kHz <br>
 And the AC amplitude as 1V. <br>
 In the configure analysis select stop time as 5ms.
