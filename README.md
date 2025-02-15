@@ -76,7 +76,7 @@ Since the calculated current does not match the simulated value, maintain the MO
 <br>
 The DC operating point analysis confirms that the NMOS transistor operates in the saturation region with 
 I<sub>d</sub> ≈ 55.5μA. <br>
-V<sub>ds</sub> = V<sub>d</sub> - V<sub>s</sub>  = 0.15 - 0  = 0.15V <br>
+V<sub>ds</sub> = V<sub>out</sub> = 0.1647V <br>
 V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub>  = 0.9 - 0.36  = 0.54V <br>
 i.e V<sub>ds</sub> > ( V<sub>gs</sub> - V<sub>th</sub>) <br>
 <br>
