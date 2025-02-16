@@ -104,7 +104,7 @@ From calculations:
  <p>In this experiment, we will conduct an AC analysis to evaluate the frequency response of the circuit, including parameters such as gain, output impedance, and phase shift. By applying a small-signal AC input, we can assess how the circuit amplifies signals and how it behaves under varying frequencies.</p>
  For the same circuit, in the configure analysis select decade as type of sweep, with starting frequenciy o.1Hz and stop frequency as 1THz. <br> 
  <br>
-<img src="C:\Users\Admin\Desktop\Kavya\LIC ckts\CKT1\ckt1 ac analysis voltage.png">
+<img src="C:\Users\Admin\Desktop\Kavya\LIC ckts\CKT1/ckt1 ac analysis voltage.png">
  <br><br>
  
  
