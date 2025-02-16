@@ -89,23 +89,29 @@ In the configure analysis select stop time as 5ms. <br><br>
 ![Image](https://github.com/user-attachments/assets/248274f7-e1f2-401a-ad52-6181a2053d9e) <br>
 From the graph: <br>
  We can observe **180&deg;** phase shift in the amplified output voltage wave  <br>
-&nbsp;&nbsp;&nbsp; gain = V<sub>out</sub> / V<sub>in</sub> <br>
+&nbsp;&nbsp;&nbsp; gain (A<sub>v</sub>) = V<sub>out</sub> / V<sub>in</sub> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.66/0.9  = 1.84 <br>
 <br>
 From calculations:
  gm = 2(I<sub>d</sub>)/(V<sub>ov</sub>)  &nbsp;&nbsp;&nbsp; i.e  V<sub>ov</sub> = V<sub>gs</sub> - V<sub>th</sub>  <br>
  &nbsp;&nbsp; = 2(55.5μ) / ( 0.9 - 0.3) <br>
- &nbsp;&nbsp; = 1.8 <br><br>
+ &nbsp;&nbsp; = 1.83*10<sup>-4</sup> <br><br>
  R<sub>out</sub> = R<sub>d</sub> = 2.751KΩ <br> 
  Overall gain : A<sub>v</sub> = gm * R<sub>out</sub>  <br>
- &nbsp;&nbsp;&nbsp; = 1.84 * 2.751K = 4951.8 <br><br> 
+ &nbsp;&nbsp;&nbsp; = (1.83*10<sup>-4</sup>) * 2.751K = 4.9 <br><br> 
 
 ## **<ins>AC Analysis</ins>**<br>
  <p>In this experiment, we will conduct an AC analysis to evaluate the frequency response of the circuit, including parameters such as gain, output impedance, and phase shift. By applying a small-signal AC input, we can assess how the circuit amplifies signals and how it behaves under varying frequencies.</p>
- For the same circuit, in the configure analysis select decade as type of sweep, with starting frequenciy o.1Hz and stop frequency as 1THz. <br> 
- <br>
-<img src="C:\Users\Admin\Desktop\Kavya\LIC ckts\CKT1/ckt1 ac analysis voltage.png">
- <br><br>
+ For the same circuit, in the configure analysis select decade as type of sweep, with starting frequenciy o.1Hz and stop frequency as 1THz. <br> <br>
+ 
+![Image](https://github.com/user-attachments/assets/6e4d68c5-bf91-482c-b0d7-9e39a4925489)
+<br> <br>
+Voltage gain = V<sub>out</sub> / V<sub>in</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; = 1.6 / 0.9 = 1.84 <br>
+in d<sub>B</sub> = 20*log<sub>10</sub>(V<sub>out</sub> / V<sub>in</sub>) <br>
+&nbsp;&nbsp;&nbsp;&nbsp; = 20*log<sub>10</sub>(1.84) <br>
+&nbsp;&nbsp;&nbsp;&nbsp; = 5.1d<sub>B</sub> - 3d<sub>B</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; = 2.1d<sub>B</sub> <br><br>
  
  
  
