@@ -239,10 +239,12 @@ From the simulation : <br>
 V<sub>out</sub> = 1.42V, I<sub>d</sub> = 8.9µA <br>
 we should check whether both transistor are in saturation region:<br><br>
 
-PMOS: V<sub>sd</sub> = V<sub>s</sub> - V<sub>d<sub> <br> 
+ PMOS: V<sub>sd</sub> = V<sub>s</sub> - V<sub>d<sub> 
+ 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.69 = 1.11V <br> 
 
-V<sub>sg</sub> = V<sub>s</sub> - V<sub>g<sub> <br> 
+ V<sub>sg</sub> = V<sub>s</sub> - V<sub>g<sub> 
+ 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.58 = 1.22V <br>
 
  V<sub>sd</sub> >= V<sub>sg</sub> - V<sub>th</sub> <br> 
