@@ -130,7 +130,7 @@ From calculations: <br>
  &nbsp;&nbsp; = 1.83*10<sup>-4</sup> <br><br>
  R<sub>out</sub> = R<sub>d</sub> = 2.751KΩ <br> 
  Overall gain : A<sub>v</sub> = gm * R<sub>out</sub>  <br>
- &nbsp;&nbsp;&nbsp; = (1.83*10<sup>-4</sup>) * 2.751K = 4.9 <br><br> 
+ &nbsp;&nbsp;&nbsp; = (1.83*10<sup>-4</sup>) * 2.751K = 4.9V/V <br><br> 
 
 ## **<ins>AC Analysis</ins>**<br>
  <p>In this experiment, we will conduct an AC analysis to evaluate the frequency response of the circuit, including parameters such as gain, output impedance, and phase shift. By applying a small-signal AC input, we can assess how the circuit amplifies signals and how it behaves under varying frequencies.</p>
@@ -146,7 +146,7 @@ in d<sub>B</sub> = 20*log<sub>10</sub>(V<sub>out</sub> / V<sub>in</sub>) <br>
 &nbsp;&nbsp;&nbsp;&nbsp; = 4.1d<sub>B</sub> - 3d<sub>B</sub> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; = 1.1d<sub>B</sub> <br><br>
 
-## **DC, Transient , AC analysis of Common Source Amplifier with Active load** <br>
+## **What if the resistor is replaced by a PMOS?** <br>
  <p>The circuit consists of a PMOS and an NMOS transistor connected in a complementary configuration, operating at a supply voltage of 1.8V. The purpose of this design is to analyze its DC, transient, and AC responses to evaluate its frequency response.</p>
 
  ### <ins> Design Specifications </ins>
@@ -236,7 +236,25 @@ To find the value of biased voltage: <br>
 ![Image](https://github.com/user-attachments/assets/67ce6ef4-b3d3-4a7b-9860-db4d82e19c26) <br>
 
 From the simulation : <br>
-V<sub>out</sub> = 1.42V, I<sub>d</sub> = 8.9µA <br><br>
+V<sub>out</sub> = 1.42V, I<sub>d</sub> = 8.9µA <br>
+we should check whether both transistor are in saturation region:<br><br>
+PMOS: V<sub>sd</sub> = V<sub>s</sub> - V<sub>d<sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.69 = 1.11V <br> 
+V<sub>sg</sub> = V<sub>s</sub> - V<sub>g<sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.58 = 1.22V <br>
+ V<sub>sd</sub> >= V<sub>sg</sub> - V<sub>th</sub> <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11V >= 1.22 - 0.39 <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11V >= 0.83V <br>
+ It satisfies the condition <br><br>
+ NMOS:  V<sub>ds</sub> = V<sub>d</sub> - V<sub>s</sub> <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.69 - 0 = 0.69V <br>
+ V<sub>gs</sub> = V<sub>g</sub> - V<sub>s</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.9 - 0 = 0.9V <br>
+ V<sub>ds</sub> >= V<sub>gs</sub> - V<sub>th</sub> <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.69 >= 0.9 - 0.366 <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.69V >= 0.54V <br>
+It satisfies the condition
+<br><br>
 ## <ins> **Transient Analysis** </ins> <br><br>
 <ins> **Circuit Diagram** </ins> <br>
 ![Image](https://github.com/user-attachments/assets/8d2a1568-ada1-43b3-8ab1-e359ed96ddab) <br><br>
@@ -260,18 +278,14 @@ in d<sub>b</sub> = 20*log<sub>10</sub>(V<sub>out</sub> / V<sub>in</sub>) <br>
 =7.95 V/V
 
 <ins> **Inference:** </ins> <br>
-<p>1) <ins> DC Analysis: </ins> <br>
--> The transistor is working correctly in the saturation region, which is needed for amplification. <br>
--> The current flowing through the circuit is 55.5µA, and the resistor value 2.751kΩ is verified. <br>
--> The output voltage is around 1.647V, and the input voltage is 0.9V. <br>
--> The transistor is properly biased for amplification. <br></p>
-<p>2) <ns> Transient Analysis: </ns> <br>
--> The output signal is amplified and flipped by 180° (inverted), which is expected in a Common Source amplifier. <br>
--> The gain of the circuit is around 1.84, meaning the output is almost twice the input.<br>
--> The circuit has an output resistance of 2.751kΩ, affecting how it drives the next stage in a system.<br> </p>
- <p>3) <ins> AC Analysis: </ins> <br>
--> The circuit maintains a stable gain over different frequencies, proving it works well for amplification. <br>
--> The voltage gain is 1.84 (or 5.1 dB), and the -3 dB point (where gain drops) confirms its frequency limits.<br>
--> Simulation and theoretical results are in close agreement, with minor variations due to parasitic effects.<br>
+<p>From circuit 1 (resistive load common source amplifier ) resistor is replaced by PMOS transistor in circuit 2 (active load common source amplifier) <br><br>
+  Outcomes: <br>
+  -> The PMOS acts as an active load, providing a higher small-signal resistance compared to a passive resistor. This results in a higher voltage gain for the circuit. <br>
+  -> The PMOS transistor operates in saturation, offering better linearity and dynamic range than a fixed resistor. <br>
+  -> The PMOS requires a proper bias voltage (Vb = 0.58V) at its gate to ensure it remains in saturation. <br>
+  -> In intigrated circuits, replacing the resistor by PMOS reduces the space. <br>
+  -> Circuit 1 is simple and easy to design, but circuit 2 is complex as you must require a proper biasing voltage (V<sub>b</sub>). <br>
+  -> As the resistor responsible for introducing paracitic capacitor, which limits the frequency response. But PMOS helps to have high gain with wide range of frequency. <br>
+  -> Gain in the first circuit is 5.1 V/V and second circuit is 7.95 V/V <br>
  </p>
  
