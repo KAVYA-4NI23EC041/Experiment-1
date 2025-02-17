@@ -238,21 +238,24 @@ To find the value of biased voltage: <br>
 From the simulation : <br>
 V<sub>out</sub> = 1.42V, I<sub>d</sub> = 8.9µA <br>
 we should check whether both transistor are in saturation region:<br><br>
+
 PMOS: V<sub>sd</sub> = V<sub>s</sub> - V<sub>d<sub> <br>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.69 = 1.11V <br> 
-V<sub>sg</sub> = V<sub>s</sub> - V<sub>g<sub> <br>
 
+V<sub>sg</sub> = V<sub>s</sub> - V<sub>g<sub> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.8 - 0.58 = 1.22V <br>
+
  V<sub>sd</sub> >= V<sub>sg</sub> - V<sub>th</sub> <br> 
- 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11V >= 1.22 - 0.39 <br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11V >= 0.83V <br>
  It satisfies the condition <br><br>
+ 
  NMOS:  V<sub>ds</sub> = V<sub>d</sub> - V<sub>s</sub> <br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.69 - 0 = 0.69V <br>
+ 
  V<sub>gs</sub> = V<sub>g</sub> - V<sub>s</sub> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.9 - 0 = 0.9V <br>
+
  V<sub>ds</sub> >= V<sub>gs</sub> - V<sub>th</sub> <br> 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.69 >= 0.9 - 0.366 <br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.69V >= 0.54V <br>
