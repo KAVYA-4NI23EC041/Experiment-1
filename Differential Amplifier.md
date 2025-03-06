@@ -13,6 +13,7 @@ V<sub>out</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 R<sub>d</sub> = ( V<sub>dd</sub> - V<sub>out</sub> ) / I<sub>d</sub> <br>
 R<sub>d</sub> = ( 2.2 - 1.25 )/1*10^-3 <br>
 R<sub>d</sub> = 950Ω <br><br>
+
 ### <ins>Component details:<ins>
   <table> 
 <tr>
@@ -47,12 +48,12 @@ R<sub>d</sub> = 950Ω <br><br>
 <br><br>
 
 ### <ins>Through DC Analysis</ins> <br> <br>
-
 ![Image](https://github.com/user-attachments/assets/99c5ca8b-2f48-4771-a26a-dfd13e5d9dcc) <br><br>
 V<sub>out</sub> = 1.25V, V<sub>gs</sub> = 1.2V, V<sub>ds</sub> = 1.25V, I<sub>d</sub> = 1mA, gm = 1.7mV/V. <br><br>
 gm = ( 2 * I<sub>d</sub> ) / (  V<sub>gs</sub> -  V<sub>th</sub> ) <br>
 gm = ( 2 * 1m) / ( 1.2 - 0.49 ) <br>
 gm = 1.71m V/V <br> <br>
+
 ### <ins> Transient Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/4e4b719d-f3be-4730-a21f-8b1c89885009) <br><br>
 For the same circuit, perform the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, and amplitude 50mV, and frequency = 1kHz <br>
@@ -61,6 +62,7 @@ We can observe 180° phase shift in the amplified output voltage wave <br>
     Overall gain (Av) = V<sub>out</sub> / V<sub>in</sub> <br>
     = 1.45/1.2 <br>
     = 1.52 V/V <br><br>
+    
 ### <ins> AC Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/68e3fd75-8909-440d-af86-380831cac9dc) <br>
 From calculations: <br>
@@ -72,7 +74,8 @@ in d<sub>B</sub> = 20 * log<sub>10</sub>(  V<sub>out</sub> / V<sub>in</sub> ) <b
 = 20 * log<sub>10</sub>( 1.52 ) <br>
 = 3.63 dB <br><br>
 <br>
-## <ins> If The Configure Is Differential Circuit ? </ins> <br><br>
+
+## <ins> If The Configure Is Differential Circuit With Resistive Load ? (Resistor Loaded Differential Pair) </ins> <br><br>
 <b>Stage2:</b> <br>
 ![Image](https://github.com/user-attachments/assets/d64a40e7-68ab-4e77-9f96-83ec610a2c8a) <br><br>
 <p>The amplifier consists of two <b>MOSFETS(M1 & M2)</b> in differential pair. The drain terminals of <b>M1</b> & <b>M2</b> are connected to <b>V<sub>dd</sub></b> through <b>R<sub>d</sub></b>. The source terminals of both MOSFET is connected to common source resistor <b>R<sub>ss</sub></b> which is then connected to ground. The <b>V<sub>in1</sub></b> & <b>V<sub>in2</sub></b> with <b>1.2V (DC offset), 50mV (amplitude), 1kHz (frequency) </b> and for any one input signal apply a phase shift of <b>180°</b> are applied to gates of <b>M1</b> & <b>M2</b>. </p>
@@ -219,11 +222,16 @@ Can observe in ac analysis which has a negative gain <br><br>
 The circuit operates in <b> Triode region </b> hence the output is not symmetrical. <br><br>
 
 
-## If R<sub>ss</sub> is replaced by current source  <br><br>
+## If R<sub>ss</sub> is replaced by current source ? (Current Source Loaded Differential Pair) <br><br>
 ![Image](https://github.com/user-attachments/assets/b61f3fbd-3c20-45b9-a29f-dc6d40e13889) <br><br>
-Replacing R<sub>ss</sub> with a current source improves gain, CMRR, and stability, making the circuit better for high-performance analog applications, such as op-amps, ADC front ends, and RF systems.Since the total current remains constant, hencs if there is difference in current they are balanced finally. <br> 
+Replacing R<sub>ss</sub> with a current source improves gain, CMRR, and stability, making the circuit better for high-performance analog applications, such as op-amps, ADC front ends, and RF systems.Since the total current remains constant, hencs if there is difference in current they are balanced finally. <br> <br>
 
-
+### <ins> DC Analysis </ins> <br>
+![Image](https://github.com/user-attachments/assets/967cc97f-4afc-4a1a-b0f5-b4df1ac28bcf) <br><br>
+Through DC Analysis we can conclude that theere is no much difference between resistor load differential pair circuit and current source loaded differential pair circuit. <br>
+<b><ins> Error Log </ins></b> <br>
+![Image](https://github.com/user-attachments/assets/14a9b40c-28a5-47e2-ab93-65235d4a7aae) <br><br>
+The circuit has V<sub>gs</sub> = 0.8V, V<sub>ds</sub> = 0.85V, 
  
 
 
