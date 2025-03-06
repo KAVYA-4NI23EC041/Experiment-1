@@ -68,9 +68,9 @@ gm = 1.71m V/V <br> R<sub>d</sub> = R<sub>out</sub> = 950Ω <br>
 A<sub>v</sub> = gm *  R<sub>d</sub> <br>
 A<sub>v</sub> = 1.71m * 950 <br>
 A<sub>v</sub> = 3.52 V/V <br> <br>
-in d<sub>b</sub> = 20 * log<sub>10</sub>(  V<sub>out</sub> / V<sub>in</sub> ) <br>
+in d<sub>B</sub> = 20 * log<sub>10</sub>(  V<sub>out</sub> / V<sub>in</sub> ) <br>
 = 20 * log<sub>10</sub>( 1.52 ) <br>
-= 3.63V/V <br><br>
+= 3.63 dB <br><br>
 <br>
 ## <ins> If The Configure Is Differential Circuit ? </ins> <br><br>
 <b>Stage2:</b> <br>
@@ -80,16 +80,20 @@ in d<sub>b</sub> = 20 * log<sub>10</sub>(  V<sub>out</sub> / V<sub>in</sub> ) <b
 We assume, the circuit has identical components that is R<sub>d1</sub> = R<sub>d2</sub> = R<sub>d</sub>. <br>
 V<sub>incm</sub> = V<sub>in1</sub> = V<sub>in2</sub> <br> <br>
 <b> <ins> Calculation </ins> </b> <br><br>
+<b> To calculate Current </b> <br>
 I<sub>ss</sub> = P / V<sub>dd</sub> = 2.2m / 2.2 = 1mA. <br>
-I<sub>d</sub> = I<sub>ss</sub> / 2 = 1m / 2 = 0.5mA.<br>
+I<sub>d</sub> = I<sub>ss</sub> / 2 = 1m / 2 = 0.5mA.<br><br>
+<b> To find Drain Resistor  </b> <br>
 V<sub>out</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 R<sub>d</sub> =  ( V<sub>dd</sub> - V<sub>out</sub> ) / I<sub>d</sub> <br>
 = (2.2 -1.25)/0.5m <br>
 = 1.9KΩ <br><br> 
+<b> To find Source Resistor </b> <br>
 V<sub>p</sub> = ( I<sub>ss</sub> * R<sub>ss</sub> ) <br>
 R<sub>ss</sub> = V<sub>p</sub> / I<sub>ss</sub> <br>
 = 0.4 / 1m <br>
 = 400Ω <br><br> 
+
 ### <ins>Circuite Parameters:</ins> <br>
 
  <table> 
@@ -135,13 +139,92 @@ R<sub>ss</sub> = V<sub>p</sub> / I<sub>ss</sub> <br>
 ![Image](https://github.com/user-attachments/assets/b0976b64-bb62-4d12-aaeb-9f446e675842) <br> Voltage List <br> <br>
 ![Image](https://github.com/user-attachments/assets/dd896d06-ee23-4136-b728-f5e58dcc1876)<br> Current List <br><br>
 
-From diagram we can observe: <br>
+From result we can observe: <br>
 V<sub>out1</sub> = V<sub>out2</sub> = 1.25V <br>, I<sub>d1</sub> = I<sub>d2</sub> = 0.5mA, I<sub>ss</sub> = 1mA. <br> <br>
 In the above circuit V<sub>g</sub> = V<sub>in</sub> = 1.2V, V<sub>s</sub> = V<sub>p</sub> = 0.4V. <br><br>
-<b> Through ERROR LOG </b> <br><br>
+
+<b><ins> From ERROR LOG</ins> </b> <br><br>
 ![Image](https://github.com/user-attachments/assets/1f936627-7a2c-4653-b706-ebd56610f244) <br><br>
 Obtained V<sub>gs</sub> = 0.8V, V<sub>ds</sub> = 0.85V, V<sub>th</sub> = 0.495V,
 I<sub>d</sub> = 0.5mA. <br><br>
+<b> V<sub>ds</sub> > V<sub>gs</sub> - V<sub>th</sub> </b> <br>
+ <b>Hence the mosfet operates in saturation region</b>
+   <br><p> The circuit functions as a high-gain amplifier. Operating in saturation enhances CMRR, helping to reject noise and unwanted common-mode signals. The total tail current (sum of both MOSFET drain currents) remains nearly constant, ensuring symmetrical operation.
+Any increase in current through one MOSFET is balanced by a decrease in the other.</p> 
+The Q-point ( V<sub>ds</sub> , I<sub>d</sub> ) = ( 0.85V , 0.5mA ) <br><br>
+
+### <ins>Transient Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/f3512313-b58e-4378-8dfa-c6021d8e712e) <br><br>
+V<sub>out(p-p)</sub> = 1.44 + 1.05 = 2.49V <br>
+The output peak to peak voltage is same for both +ve and -ve half cycle ( both MOSFETS ) <br><br>
+
+### <ins> AC Analysis </ins> <br><br> 
+![Image](https://github.com/user-attachments/assets/32114f2d-e14c-4e21-b33a-3d42bf6011c1) <br><br>
+The observed gain is 12.1dB <br><br>
+![Image](https://github.com/user-attachments/assets/10f98eab-6959-4172-b5be-c785269c7122) <br><br>
+Find gain through calcultion: <br>
+A<sub>v</sub> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
+= 399.759 / 99.4 <br>
+= 4.015 V/V <br>
+<b> In dB = 20*log<sub>10</sub> (4.015) </b> <br>
+= 12.07 dB <br><br>
+<b> To find the bandwidth: </b> <br>
+Bandwidth = High frequency - Low frequency <br>
+= 21.7GHz - 0Hz = 21.7GHz <br>
+A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently.<br><br>
+<b> We can observe the increase in gain from stage 1 circuit. </b> <br><br>
+
+### If there is difference in input voltages ? <br><br>
+<b> a) When V<sub>in1</sub> > V<sub>in2</sub> </b> <br><br>
+![Image](https://github.com/user-attachments/assets/432c463b-746e-4335-9f63-a20d6870722e) <br><br>
+In the above circuit, the V<sub>incm1</sub> = 1.2V , V<sub>incm2</sub> = 0.5V with same amplitude and frequency.<br>
+we can observe V<sub>out1</sub> = 0.811V and V<sub>out2</sub> = 2.19V nealy equal to V<sub>dd</sub>. <br><br>
+<b> b) When V<sub>in1</sub> < V<sub>in2</sub> </b> <br><br>
+![Image](https://github.com/user-attachments/assets/ac1a2cb4-0b7a-486f-9f98-2242af55cc9b) <br> <br>
+From the above circuit, the V<sub>incm1</sub> = 0.5V , V<sub>incm2</sub> = 1.2V with same amplitude and frequency.<br>
+we can observe V<sub>out2</sub> = 0.811V and V<sub>out1</sub> = 2.19V nealy equal to V<sub>dd</sub>. <br><br>
+To make this circuit to work as a linear amplifier, the difference between input voltages must be very less. <br>
+![Image](https://github.com/user-attachments/assets/b0417d60-1d51-4a63-8a36-67490e3ee145) <br><br>
+
+<ins>Lets Check the input and output voltage swing of the circuit </ins> <br><br>
+V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
+= 0.366 + 0.4 <br>
+= 0.766 V <br><br>
+V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> - R<sub>d</sub> ) + V<sub>th</sub> <br>
+= 2.2 - ( 0.5m * 1.9K ) + 0.366 <br>
+= 1.616 V <br><br>
+V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>p</sub>   <br>
+= V<sub>gs</sub> - V<sub>th</sub> +V<sub>p</sub>  <br>
+= 0.8 - 0.36 + 0.4 <br>
+= 0.84 V <br><br>
+V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> - R<sub>d</sub> ) <br>
+= 2.2 - ( 0.5m * 1.9K) <br>
+= 1.25V <br><br>
+
+<b><ins> Lets check in Transient Analysis</ins> </b> <br><br>
+<b> When amplitude is 50mV </b> <br>
+a) When V<sub>incm</sub> = 0.5V ( <0.76V (V<sub>incm(min)</sub>) ) <br>
+![Image](https://github.com/user-attachments/assets/430a8713-021b-4a0c-a6dd-3f02f83996d8) <br><br>
+![Image](https://github.com/user-attachments/assets/297a3164-a022-449a-a5d6-d88636f8deb2) <br><br>
+From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and < V<sub>gs</sub> <  V<sub>th</sub> </b> <br>
+Can see the ac analysis of this circuit, which is in negative <br><br>
+![Image](https://github.com/user-attachments/assets/52a0012f-1c24-47e3-af23-d539c6d55b81) <br><br>
+The circuit operates in <b> Cut-off region </b> hence the output wave is not symmetrical. <br><br>
+b) When V<sub>incm</sub> = 1.7V ( >1.616V (V<sub>incm(max)</sub>) ) <br> 
+![Image](https://github.com/user-attachments/assets/fcf69a7a-9a12-4c80-9523-a8e4bea2c79b) <br><br> 
+![Image](https://github.com/user-attachments/assets/62a130da-f6a8-41e1-9904-b6aa6e8bbdd8) <br><br> 
+From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and < V<sub>gs</sub> >  V<sub>th</sub> </b> <br>
+Can observe in ac analysis which has a negative gain <br><br> 
+![Image](https://github.com/user-attachments/assets/0ed91fd2-ceac-42cf-b764-8bc7ec9cdbfc) <br><br> 
+The circuit operates in <b> Triode region </b> hence the output is not symmetrical. <br><br>
+
+
+## If R<sub>ss</sub> is replaced by current source  <br><br>
+![Image](https://github.com/user-attachments/assets/b61f3fbd-3c20-45b9-a29f-dc6d40e13889) <br><br>
+Replacing R<sub>ss</sub> with a current source improves gain, CMRR, and stability, making the circuit better for high-performance analog applications, such as op-amps, ADC front ends, and RF systems.Since the total current remains constant, hencs if there is difference in current they are balanced finally. <br> 
+
+
+ 
 
 
 
