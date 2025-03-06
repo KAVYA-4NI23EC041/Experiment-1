@@ -206,14 +206,14 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> - R<sub>d</sub> ) <br>
 a) When V<sub>incm</sub> = 0.5V ( <0.76V (V<sub>incm(min)</sub>) ) <br>
 ![Image](https://github.com/user-attachments/assets/430a8713-021b-4a0c-a6dd-3f02f83996d8) <br><br>
 ![Image](https://github.com/user-attachments/assets/297a3164-a022-449a-a5d6-d88636f8deb2) <br><br>
-From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and < V<sub>gs</sub> <  V<sub>th</sub> </b> <br>
+From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and  V<sub>gs</sub> <  V<sub>th</sub> </b> <br>
 Can see the ac analysis of this circuit, which is in negative <br><br>
 ![Image](https://github.com/user-attachments/assets/52a0012f-1c24-47e3-af23-d539c6d55b81) <br><br>
 The circuit operates in <b> Cut-off region </b> hence the output wave is not symmetrical. <br><br>
 b) When V<sub>incm</sub> = 1.7V ( >1.616V (V<sub>incm(max)</sub>) ) <br> 
 ![Image](https://github.com/user-attachments/assets/fcf69a7a-9a12-4c80-9523-a8e4bea2c79b) <br><br> 
 ![Image](https://github.com/user-attachments/assets/62a130da-f6a8-41e1-9904-b6aa6e8bbdd8) <br><br> 
-From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and < V<sub>gs</sub> >  V<sub>th</sub> </b> <br>
+From simulation we can observe <b> V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> and  V<sub>gs</sub> >  V<sub>th</sub> </b> <br>
 Can observe in ac analysis which has a negative gain <br><br> 
 ![Image](https://github.com/user-attachments/assets/0ed91fd2-ceac-42cf-b764-8bc7ec9cdbfc) <br><br> 
 The circuit operates in <b> Triode region </b> hence the output is not symmetrical. <br><br>
