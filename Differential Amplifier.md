@@ -195,14 +195,14 @@ To make this circuit to work as a linear amplifier, the difference between input
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
 = 0.366 + 0.4 <br>
 = 0.766 V <br><br>
-V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> - R<sub>d</sub> ) + V<sub>th</sub> <br>
+V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) + V<sub>th</sub> <br>
 = 2.2 - ( 0.5m * 1.9K ) + 0.366 <br>
 = 1.616 V <br><br>
 V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>p</sub>   <br>
 = V<sub>gs</sub> - V<sub>th</sub> +V<sub>p</sub>  <br>
 = 0.8 - 0.36 + 0.4 <br>
 = 0.84 V <br><br>
-V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> - R<sub>d</sub> ) <br>
+V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 = 2.2 - ( 0.5m * 1.9K) <br>
 = 1.25V <br><br>
 
@@ -259,7 +259,25 @@ The frequency for gain 9,12 dB is 21.7GHz <br>
 Bandwidth = High frequency - Low frequency <br>
 = 21.7GHz - 0Hz = 21.7GHz <br>
 A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently. <br> 
-<b> The gain is almost equal to resistive load differential amplifier. </b> <br>
+<b> The gain is almost equal to resistive load differential amplifier. </b> <br><br>
+<ins>Lets Check the input and output voltage swing of the circuit </ins> <br><br>
+V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
+= 0.366 + 0.4 <br>
+= 0.766 V <br><br>
+V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) + V<sub>th</sub> <br>
+= 2.2 - ( 0.5m * 1.9K ) + 0.366 <br>
+= 1.616 V <br><br>
+V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>p</sub>   <br>
+= V<sub>gs</sub> - V<sub>th</sub> +V<sub>p</sub>  <br>
+= 0.8 - 0.36 + 0.4 <br>
+= 0.84 V <br><br>
+V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
+= 2.2 - ( 0.5m * 1.9K) <br>
+= 1.25V <br><br> 
+
+### <ins> If Current Source Is Replaced By Mosfet? ( Mosfet a Current Source ) </ins> <br><br>
+<p>The tail current source (previously an ideal current source) is replaced by an NMOS transistor operating in the saturation region. The gate of this MOSFET is biased with a fixed voltage to set a constant drain current.The MOSFET acts as an active current source, providing a nearly constant tail current. The differential pair MOSFETs share this tail current, adjusting their drain currents based on the input difference. Common-mode signals are rejected, as the tail MOSFET prevents variations in total current.</p> 
+
 
 
 
