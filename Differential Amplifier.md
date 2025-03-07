@@ -172,6 +172,8 @@ A<sub>v</sub> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<
 <b> In dB = 20*log<sub>10</sub> (4.015) </b> <br>
 = 12.07 dB <br><br>
 <b> To find the bandwidth: </b> <br>
+12.12 dB - 3 dB = 9.12 dB <br>
+The frequency for gain 9.12 dB is 21.7GHz <br>
 Bandwidth = High frequency - Low frequency <br>
 = 21.7GHz - 0Hz = 21.7GHz <br>
 A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently.<br><br>
@@ -231,9 +233,33 @@ Replacing R<sub>ss</sub> with a current source improves gain, CMRR, and stabilit
 Through DC Analysis we can conclude that theere is no much difference between resistor load differential pair circuit and current source loaded differential pair circuit. <br>
 <b><ins> Error Log </ins></b> <br>
 ![Image](https://github.com/user-attachments/assets/14a9b40c-28a5-47e2-ab93-65235d4a7aae) <br><br>
-The circuit has V<sub>gs</sub> = 0.8V, V<sub>ds</sub> = 0.85V, 
+The circuit has V<sub>gs</sub> = 0.8V, V<sub>ds</sub> = 0.85V, with I<sub>d</sub> = 0.5mA.<br>
+<b> V<sub>ds</sub> > V<sub>gs</sub> - V<sub>th</sub> <br>
+ Hence the circuit is in saturation region. </b> <br> 
+ The Q-point is ( V<sub>ds</sub> , I<sub>d</sub> ) = ( 0.85V , 0.5mA ) <br><br>
  
-
+ ### <ins> Transient Analysis </ins> <br>
+ ![Image](https://github.com/user-attachments/assets/d38a3475-84b7-4877-ba8f-30e5a9d6dacd) <br><br>
+ V<sub>out(p-p)</sub> = 1.44 + 1.05 = 2.49V <br>
+ The output voltage is same for both +ve and -ve half cycle, and is equal to resistive load circuit. <br><br>
+ 
+ ### <ins> AC Analysis </ins> <br>
+![Image](https://github.com/user-attachments/assets/63b3135a-50ce-4d62-a81f-5c0570ca82a0) <br><br>
+The observed gain is 12.12 dB. <br><br>
+![Image](https://github.com/user-attachments/assets/5dcaf70b-2564-4ef9-a1e4-c1c3d416c8dc) <br><br>
+Find gain through calcultion: <br>
+A<sub>v</sub> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
+= 399.559 / 99.1 <br>
+= 4.035 V/V <br>
+In dB = 20*log<sub>10</sub> (4.035) <br>
+= 12.116 dB <br><br>
+<b>To find the bandwidth: </b> <br>
+12.12 dB - 3 dB = 9.12 dB <br>
+The frequency for gain 9,12 dB is 21.7GHz <br>
+Bandwidth = High frequency - Low frequency <br>
+= 21.7GHz - 0Hz = 21.7GHz <br>
+A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently. <br> 
+<b> The gain is almost equal to resistive load differential amplifier. </b> <br>
 
 
 
