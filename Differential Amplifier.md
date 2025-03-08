@@ -260,6 +260,7 @@ Bandwidth = High frequency - Low frequency <br>
 = 21.7GHz - 0Hz = 21.7GHz <br>
 A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently. <br> 
 <b> The gain is almost equal to resistive load differential amplifier. </b> <br><br>
+
 <ins>Lets Check the input and output voltage swing of the circuit </ins> <br><br>
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
 = 0.366 + 0.4 <br>
@@ -267,8 +268,8 @@ V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
 V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) + V<sub>th</sub> <br>
 = 2.2 - ( 0.5m * 1.9K ) + 0.366 <br>
 = 1.616 V <br><br>
-V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>p</sub>   <br>
-= V<sub>gs</sub> - V<sub>th</sub> +V<sub>p</sub>  <br>
+V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>ov3</sub>   <br>
+= V<sub>gs1</sub> - V<sub>th1</sub> +V<sub>p</sub>  <br>
 = 0.8 - 0.36 + 0.4 <br>
 = 0.84 V <br><br>
 V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
@@ -277,6 +278,58 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 
 ### <ins> If Current Source Is Replaced By Mosfet? ( Mosfet a Current Source ) </ins> <br><br>
 <p>The tail current source (previously an ideal current source) is replaced by an NMOS transistor operating in the saturation region. The gate of this MOSFET is biased with a fixed voltage to set a constant drain current.The MOSFET acts as an active current source, providing a nearly constant tail current. The differential pair MOSFETs share this tail current, adjusting their drain currents based on the input difference. Common-mode signals are rejected, as the tail MOSFET prevents variations in total current.</p> 
+
+### <ins> DC Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/ca9b4a8c-0cd4-4779-b4e5-fffa2e4844fb) <br><br>
+<ins> <b> Error Log </b> </ins> <br>
+![Image](https://github.com/user-attachments/assets/cde21af9-6298-4fcb-b60d-5358a84c1062) <br><br>
+
+### <ins> Transient Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/2ebe18dc-e63b-45cb-83d4-d5dca3ce8034) <br><br>
+<ins>Calculate Gain<ins> <br>
+![Image](https://github.com/user-attachments/assets/67c54a25-1570-43d3-b659-6ff04716e3fe) <br><br>
+
+### <ins> AC Analysis </ins> <br><br> 
+![Image](https://github.com/user-attachments/assets/340707d5-3061-4cb6-9f24-99dc1578233d) <br><br>
+
+<b> <ins> Check Voltage Swing </ins> </b> <br>
+V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
+= 0.495 + 0.4 <br>
+= 0.896 V <br><br>
+V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) + V<sub>th</sub> <br>
+= 2.2 - ( 0.5m * 1.9K ) + 0.495 <br>
+= 1.745 V <br><br>
+V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>ov3</sub>   <br>
+= ( V<sub>gs1</sub> - V<sub>th</sub> ) + ( V<sub>gs3</sub> - V<sub>th</sub> ) <br>
+= ( 0.895 - 0.498 ) +  ( 0.8 - 0.495 ) <br>
+= 0.702 V <br><br>
+V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
+= 2.2 - ( 0.5m * 1.9K) <br>
+= 1.25 V <br><br>
+
+<ins> Lets check in Transient Analysis </ins> <br>
+<b> When amplitude is 50mV </b> <br>
+a) When V<sub>incm</sub> = 0.3V ( <0.895V (V<sub>incm(min)</sub>) ) <br>
+<b> <ins>DC Values</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/5faa56b5-03d4-417b-9b91-37dcd6c741ee) <br><br>
+<b> <ins>Transient Analysis</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/9ebe9570-6688-479b-bb99-fb5d6598f421) <br><br>
+<b> <ins>AC Analysis</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/052b7635-26e9-4612-85dd-813b8879aba4) <br><br>
+b) When V<sub>incm</sub> = 1.8V ( >1.745V (V<sub>incm(max)</sub>) ) <br> 
+<b> <ins>DC Values</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/0068b21d-bfda-4f6b-84ea-30a7aeee8fa1) <br><br>
+<b> <ins>Transient Analysis</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/3928cee9-7d7c-4956-b2ea-d04bf8fddac6) <br><br>
+<b> <ins>AC Analysis</ins> </b> <br>
+![Image](https://github.com/user-attachments/assets/58e2db20-ef5b-48a8-b5fa-b19e1abfe314) <br><br>
+
+## <ins> If Drain Resistors Is Replaced By P-Mosfet ? ( Differential Amplifier With Curent Mirror Circuit ) <br><br>
+<p>This is a differential amplifier with a current mirror load. It consists of two NMOS transistors forming the differential pair and two PMOS transistors acting as a current mirror. The tail current source (NMOS) sets the bias current for the differential pair.When a differential input (V_in1 - V_in2) is applied, the current is steered between the two NMOS transistors. The current mirror reflects the current to provide a high output impedance, increasing gain.</p>
+
+### <ins> DC Analysis </ins> <br>
+
+
 
 
 
