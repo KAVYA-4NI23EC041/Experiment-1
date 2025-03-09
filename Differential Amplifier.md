@@ -223,6 +223,7 @@ Can observe in ac analysis which has a negative gain <br><br>
 ![Image](https://github.com/user-attachments/assets/0ed91fd2-ceac-42cf-b764-8bc7ec9cdbfc) <br><br> 
 The circuit operates in <b> Triode region </b> hence the output is not symmetrical. <br><br>
 
+---
 
 ## If R<sub>ss</sub> is replaced by current source ? (Current Source Loaded Differential Pair) <br><br>
 ![Image](https://github.com/user-attachments/assets/b61f3fbd-3c20-45b9-a29f-dc6d40e13889) <br><br>
@@ -276,6 +277,8 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 = 2.2 - ( 0.5m * 1.9K) <br>
 = 1.25V <br><br> 
 
+---
+
 ### <ins> If Current Source Is Replaced By Mosfet? ( Mosfet a Current Source ) </ins> <br><br>
 <p>The tail current source (previously an ideal current source) is replaced by an NMOS transistor operating in the saturation region. The gate of this MOSFET is biased with a fixed voltage to set a constant drain current.The MOSFET acts as an active current source, providing a nearly constant tail current. The differential pair MOSFETs share this tail current, adjusting their drain currents based on the input difference. Common-mode signals are rejected, as the tail MOSFET prevents variations in total current.</p> 
 
@@ -305,7 +308,12 @@ A<sub>v</sub><br> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> 
 
 ### <ins> AC Analysis </ins> <br><br> 
 ![Image](https://github.com/user-attachments/assets/340707d5-3061-4cb6-9f24-99dc1578233d) <br>
-The Observed gain is 12.127 V/V<br> <br> 
+The Observed gain is 12.127 V/V<br>
+To calculate bandwidth:<br> 
+12.12 d<sub>B</sub> - 3 d<sub>B</sub> = 9.12 d<sub>B</sub> <br>
+<b>Bandwidth</b> = f<sub>H</sub> - f<sub>l</sub> <br>
+= 21.7GHz - 0Hz <br>
+= 21.7Ghz
 
 <b> <ins> Check Voltage Swing </ins> </b> <br>
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
@@ -334,7 +342,6 @@ The transitor is in off state , therefore you are observing distortion or the cl
 <b> <ins>AC Analysis</ins> </b> <br>
 ![Image](https://github.com/user-attachments/assets/052b7635-26e9-4612-85dd-813b8879aba4) <br>
 Hence can observe gain in negative axis in ac analysis.<br><br>
-
 b) When V<sub>incm</sub> = 1.8V ( >1.745V (V<sub>incm(max)</sub>) ) <br> 
 <b> <ins>DC Values</ins> </b> <br>
 ![Image](https://github.com/user-attachments/assets/0068b21d-bfda-4f6b-84ea-30a7aeee8fa1) <br>
@@ -347,7 +354,9 @@ As the both transistors are operating in triode rgion, can observe output wave w
 ![Image](https://github.com/user-attachments/assets/58e2db20-ef5b-48a8-b5fa-b19e1abfe314) <br>
 Can see the gain is less, when it operates in triode region.<br>
 
-## <ins> If Drain Resistors Is Replaced By P-Mosfet ? ( Differential Amplifier With Curent Mirror Circuit ) <br><br>
+---
+
+## <ins> If Drain Resistors Is Replaced By P-Mosfet ? ( Differential Amplifier With Curent Mirror Circuit ) </ins><br><br>
 <p>This is a differential amplifier with a current mirror load. It consists of two NMOS transistors forming the differential pair and two PMOS transistors acting as a current mirror. The tail current source (NMOS) sets the bias current for the differential pair.When a differential input (V_in1 - V_in2) is applied, the current is steered between the two NMOS transistors. The current mirror reflects the current to provide a high output impedance, increasing gain.</p>
 
 ### <ins> DC Analysis </ins> <br><br>
@@ -365,6 +374,37 @@ The observed gain is 9.45d<sub>B</sub>.<br><br>
 
 
 
+
+
+| **Parameter**          | **Circuit 1**  - Common Source | **Circuit 2**  - Common Source with Degeneration | **Circuit 3**  - Common Source with Current Source | **Circuit 4**  - Common Source with Active Load | **Circuit 5**  - Differential Amplifier |
+|------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
+| **Load Type**         | Resistor (Rd)                            | Resistor (Rd) + Source Degeneration (Rss) | Current Source (High \( r<sub>o</sub> \))          | Active Load (MOSFET)                     | Current Mirror Load                      |
+| **Gain (\( A_v \))**  | Moderate                                | Lower (due to degeneration)             | Highest (due to high \( r<sub>o</sub> \))         | High                                    | Moderate (Lower than Circuit 3 & 4)     |
+| **Output Resistance** | Moderate                                | Higher than Circuit 1                   | Very High                               | High                                    | Very High                                |
+| **CMRR**             | Low                                     | Low                                     | Low                                     | Low                                     | High (Best for rejecting noise)         |
+| **Linearity**        | Moderate                                | High (Degeneration improves linearity)  | Moderate                                | Moderate                                | High (Better than all due to symmetry)  |
+| **Bandwidth**        | Moderate                                | High (Degeneration increases BW)        | Low (due to high \( r<sub>o</sub> \))             | Moderate                                | Moderate                                |
+| **Power Consumption**| Low                                     | Moderate                                | High                                    | High                                    | Moderate                                |
+| **Stability**        | Moderate                                | High (Degeneration stabilizes circuit)  | Low (High \( r<sub>o</sub> \) makes it sensitive) | High                                    | High (Best among all)                   |
+
+---
+
+### **Why Does Circuit 5 Have Lower Gain?**
+| **Reason** | **Impact on Gain** |
+|------------|-------------------|
+| **Half-Signal Swing** | In a differential amplifier, the total output voltage is **split between two outputs**, so each node gets only **half of the total signal swing**, reducing gain. |
+| **Common-Mode Rejection Tradeoff** | The circuit is designed to reject common-mode noise, improving **CMRR**, but this sacrifices some gain compared to single-ended designs. |
+| **Active Load Limitations** | While the current mirror load increases output resistance, it does not increase gain as much as a high-impedance current source (as in Circuit 3). |
+
+---
+
+### **Conclusion**
+- **Circuit 3 (Common Source with Current Source Load) has the highest gain** due to its **high output resistance**.  
+- **Circuit 5 (Differential Amplifier) has lower gain** because it **splits the signal between two outputs** and **prioritizes noise rejection (CMRR) over maximum gain**.  
+- **Circuit 2 (Degeneration) trades gain for better bandwidth and stability**.  
+- **Circuit 4 (Active Load) provides a balance between gain, stability, and power efficiency**.  
+
+---
 
 
 
