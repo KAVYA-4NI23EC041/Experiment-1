@@ -280,17 +280,32 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 <p>The tail current source (previously an ideal current source) is replaced by an NMOS transistor operating in the saturation region. The gate of this MOSFET is biased with a fixed voltage to set a constant drain current.The MOSFET acts as an active current source, providing a nearly constant tail current. The differential pair MOSFETs share this tail current, adjusting their drain currents based on the input difference. Common-mode signals are rejected, as the tail MOSFET prevents variations in total current.</p> 
 
 ### <ins> DC Analysis </ins> <br><br>
-![Image](https://github.com/user-attachments/assets/ca9b4a8c-0cd4-4779-b4e5-fffa2e4844fb) <br><br>
+![Image](https://github.com/user-attachments/assets/ca9b4a8c-0cd4-4779-b4e5-fffa2e4844fb) <br>
+From the simulation V<sub>out</sub> = 1.25V and I<sub>d</sub> = 1mA<br><br>
 <ins> <b> Error Log </b> </ins> <br>
-![Image](https://github.com/user-attachments/assets/cde21af9-6298-4fcb-b60d-5358a84c1062) <br><br>
+![Image](https://github.com/user-attachments/assets/cde21af9-6298-4fcb-b60d-5358a84c1062) <br>
+V<sub>gs</sub> of all the three mosfet is greater than than V<sub>th</sub>, hence all are in on state. <br>
+V<sub>ds</sub> > V<sub>gs</sub> - V<sub>th</sub> for the the mosfets , hence all are in saturation region. <br>
+The Q-point is ( V<sub>ds</sub><br> , I<sub>d</sub> ) = ( 0.85V , 0.5mA ) <br><br>
+
+<b>Gain From DC Analysis</B> <br>
+gm = ( 2 * I<sub>d3</sub> ) / ( V<sub>ov3</sub> ) <br>
+= ( 2* 0.5m ) / ( 0.8 - 0.495 ) <br>
+= 2.51m V/V <br><br>
 
 ### <ins> Transient Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/2ebe18dc-e63b-45cb-83d4-d5dca3ce8034) <br><br>
 <ins>Calculate Gain<ins> <br>
-![Image](https://github.com/user-attachments/assets/67c54a25-1570-43d3-b659-6ff04716e3fe) <br><br>
+![Image](https://github.com/user-attachments/assets/67c54a25-1570-43d3-b659-6ff04716e3fe) <br>
+A<sub>v</sub><br> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
+= 399m / 99.8m <br>
+= 4.04 V/V <br>
+<b> 20* log<sub>10</sub>( A<sub>v</sub> ) </b> = 20 * log<sub>10</sub>(4.04) <br>
+= 12.12 V/V <br><br>
 
 ### <ins> AC Analysis </ins> <br><br> 
-![Image](https://github.com/user-attachments/assets/340707d5-3061-4cb6-9f24-99dc1578233d) <br><br>
+![Image](https://github.com/user-attachments/assets/340707d5-3061-4cb6-9f24-99dc1578233d) <br>
+The Observed gain is 12.127 V/V<br> <br> 
 
 <b> <ins> Check Voltage Swing </ins> </b> <br>
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
@@ -311,24 +326,64 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 <b> When amplitude is 50mV </b> <br>
 a) When V<sub>incm</sub> = 0.3V ( <0.895V (V<sub>incm(min)</sub>) ) <br>
 <b> <ins>DC Values</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/5faa56b5-03d4-417b-9b91-37dcd6c741ee) <br><br>
-<b> <ins>Transient Analysis</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/9ebe9570-6688-479b-bb99-fb5d6598f421) <br><br>
+![Image](https://github.com/user-attachments/assets/5faa56b5-03d4-417b-9b91-37dcd6c741ee) <br>
+We can observe V<sub>gs</sub> < V<sub>th</sub>, of both the mosfets which means they are in <b>off state</b> . <br>
+<b> <ins>Transient Analysis</ins> </b> <br><br>
+![Image](https://github.com/user-attachments/assets/9ebe9570-6688-479b-bb99-fb5d6598f421) <br>
+The transitor is in off state , therefore you are observing distortion or the clipping off of the output circuit .<br><br>
 <b> <ins>AC Analysis</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/052b7635-26e9-4612-85dd-813b8879aba4) <br><br>
+![Image](https://github.com/user-attachments/assets/052b7635-26e9-4612-85dd-813b8879aba4) <br>
+Hence can observe gain in negative axis in ac analysis.<br><br>
+
 b) When V<sub>incm</sub> = 1.8V ( >1.745V (V<sub>incm(max)</sub>) ) <br> 
 <b> <ins>DC Values</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/0068b21d-bfda-4f6b-84ea-30a7aeee8fa1) <br><br>
+![Image](https://github.com/user-attachments/assets/0068b21d-bfda-4f6b-84ea-30a7aeee8fa1) <br>
+We can observe V<sub>gs</sub> > V<sub>th</sub>, of both the mosfets which means they are in <b>on state</b>. <br>
+But V<sub>ds</sub> < V<sub>gs</sub> - V<sub>th</sub> Hence both mosfet are operating in <b>triode region</b>. <br><br>
 <b> <ins>Transient Analysis</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/3928cee9-7d7c-4956-b2ea-d04bf8fddac6) <br><br>
+![Image](https://github.com/user-attachments/assets/3928cee9-7d7c-4956-b2ea-d04bf8fddac6) <br>
+As the both transistors are operating in triode rgion, can observe output wave which is not symmetrical.<br><br>
 <b> <ins>AC Analysis</ins> </b> <br>
-![Image](https://github.com/user-attachments/assets/58e2db20-ef5b-48a8-b5fa-b19e1abfe314) <br><br>
+![Image](https://github.com/user-attachments/assets/58e2db20-ef5b-48a8-b5fa-b19e1abfe314) <br>
+Can see the gain is less, when it operates in triode region.<br>
 
 ## <ins> If Drain Resistors Is Replaced By P-Mosfet ? ( Differential Amplifier With Curent Mirror Circuit ) <br><br>
 <p>This is a differential amplifier with a current mirror load. It consists of two NMOS transistors forming the differential pair and two PMOS transistors acting as a current mirror. The tail current source (NMOS) sets the bias current for the differential pair.When a differential input (V_in1 - V_in2) is applied, the current is steered between the two NMOS transistors. The current mirror reflects the current to provide a high output impedance, increasing gain.</p>
 
-### <ins> DC Analysis </ins> <br>
+### <ins> DC Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/1535d5f3-0d09-461c-ba80-4f159cc03594) <br><br>
+<b> Error Log</b> <br>
+![Image](https://github.com/user-attachments/assets/d9e376ca-5142-45d3-aa59-a7dfd3258f85) <br>
+Can see every mosfet in this circuit is in <b>saturation region</b><br><br>
+### <ins> Transient Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/9edd5d01-349a-42b4-8882-92b93c12af25) <br>
+Can observe a symmetric output wave, with voltage of 1.31V. <br><br>
+### <ins> AC Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/2782839d-0302-45ce-a142-9ffe956beea4) <br>
+The observed gain is 9.45d<sub>B</sub>.<br><br>
 
+
+
+
+
+
+
+
+
+
+| **Parameter**           | **First Circuit** | **Second Circuit** | **Third Circuit** | **Fourth Circuit** | **Fifth Circuit** |
+|-------------------------|-----------------------------|--------------------------------|--------------------------------|---------------------------------|---------------------------------|
+| **Topology**            | Common-Source               | Common-Source with degeneration | Common-Source with current source | Common-Source with active load | Differential Amplifier with current mirror |
+| **Load Type**           | Resistor (Rd)              | Resistor (Rd) with source degeneration | Current source (high Ro) | Active Load (MOSFET) | Current mirror as load |
+| **Gain (Av)**           | Moderate                    | Lower due to degeneration | Higher due to high Ro | Higher | Differential Gain |
+| **Input Resistance**    | High                        | Lower due to degeneration | High | Moderate | High |
+| **Output Resistance**   | Moderate                    | Higher due to degeneration | Very High | High | Very High |
+| **Linearity**           | Moderate                    | Improved due to degeneration | Higher | Improved | High |
+| **CMRR (Common Mode Rejection Ratio)** | Low | Low | Low | Low | High (Differential) |
+| **Power Consumption**   | Low                         | Moderate | Higher | Higher | Moderate |
+| **Bandwidth**          | Moderate                    | Wider due to degeneration | Lower due to high Ro | Moderate | Moderate |
+| **Noise Performance**   | Moderate                    | Improved due to degeneration | Higher | Moderate | Better |
+| **Stability**           | Moderate                    | Improved                      | Lower | Higher | Higher |
 
 
 
