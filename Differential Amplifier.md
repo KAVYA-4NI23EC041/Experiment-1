@@ -371,19 +371,6 @@ The observed gain is 9.45d<sub>B</sub>.<br><br>
 
 
 
-| **Parameter**           | **First Circuit** | **Second Circuit** | **Third Circuit** | **Fourth Circuit** | **Fifth Circuit** |
-|-------------------------|-----------------------------|--------------------------------|--------------------------------|---------------------------------|---------------------------------|
-| **Topology**            | Common-Source               | Common-Source with degeneration | Common-Source with current source | Common-Source with active load | Differential Amplifier with current mirror |
-| **Load Type**           | Resistor (Rd)              | Resistor (Rd) with source degeneration | Current source (high Ro) | Active Load (MOSFET) | Current mirror as load |
-| **Gain (Av)**           | Moderate                    | Lower due to degeneration | Higher due to high Ro | Higher | Differential Gain |
-| **Input Resistance**    | High                        | Lower due to degeneration | High | Moderate | High |
-| **Output Resistance**   | Moderate                    | Higher due to degeneration | Very High | High | Very High |
-| **Linearity**           | Moderate                    | Improved due to degeneration | Higher | Improved | High |
-| **CMRR (Common Mode Rejection Ratio)** | Low | Low | Low | Low | High (Differential) |
-| **Power Consumption**   | Low                         | Moderate | Higher | Higher | Moderate |
-| **Bandwidth**          | Moderate                    | Wider due to degeneration | Lower due to high Ro | Moderate | Moderate |
-| **Noise Performance**   | Moderate                    | Improved due to degeneration | Higher | Moderate | Better |
-| **Stability**           | Moderate                    | Improved                      | Lower | Higher | Higher |
 
 
 
