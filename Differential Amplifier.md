@@ -294,6 +294,9 @@ V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 
 ### <ins> DC Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/ca9b4a8c-0cd4-4779-b4e5-fffa2e4844fb) <br>
+V<sub>b</sub> =  V<sub>th</sub> +  V<sub>p</sub> <br>
+= 0.495 + 0.4 <br>
+= 0.895V <br><br>
 From the simulation V<sub>out</sub> = 1.25V and I<sub>d</sub> = 1mA<br><br>
 <ins> <b> Error Log </b> </ins> <br>
 ![Image](https://github.com/user-attachments/assets/cde21af9-6298-4fcb-b60d-5358a84c1062) <br>
@@ -310,7 +313,7 @@ gm = ( 2 * I<sub>d3</sub> ) / ( V<sub>ov3</sub> ) <br>
 ![Image](https://github.com/user-attachments/assets/2ebe18dc-e63b-45cb-83d4-d5dca3ce8034) <br><br>
 <ins>Calculate Gain</ins> <br>
 ![Image](https://github.com/user-attachments/assets/67c54a25-1570-43d3-b659-6ff04716e3fe) <br>
-A<sub>v</sub><br> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
+A<sub>v</sub> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
 = 399m / 99.8m <br>
 = 4.04 V/V <br>
 <b> 20* log<sub>10</sub>( A<sub>v</sub> ) </b> = 20 * log<sub>10</sub>(4.04) <br>
