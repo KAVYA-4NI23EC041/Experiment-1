@@ -2,6 +2,8 @@
 <p>A differential amplifier is a type of electronic amplifier that amplifies the difference between two input signals while rejecting any common-mode signals. It is a fundamental building block in analog circuits, particularly in operational amplifiers (op-amps) and communication systems.</p>
 <p>Differential amplifiers process the difference between two input signals, which allows them to effectively eliminate noise or interference present in both signals. They also suppress common-mode signals, removing any DC offset and applying gain only to the desired signal, which is advantageous in integrated circuit (IC) design by eliminating the need for large DC-blocking capacitors. This subtraction feature facilitates the integration of differential amplifiers into negative feedback systems, enhancing amplifier performance.</p>
 
+---
+
 # <ins> Design Question </ins> <br>
 <b> Design and analyse the differential amplifier circuit for the following specifications V<sub>dd</sub> : 2.2V, Power<=2.2mW, V<sub>incm</sub> : 1.2V, V<sub>ocm</sub> : 1.25V, V<sub>p</sub> : 0.4V. Perform DC Analysis, Transient Analysis, Frequency responce and extract the parameters</b> <br><br>
 <b>Stage1</b><br>
@@ -13,6 +15,8 @@ V<sub>out</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
 R<sub>d</sub> = ( V<sub>dd</sub> - V<sub>out</sub> ) / I<sub>d</sub> <br>
 R<sub>d</sub> = ( 2.2 - 1.25 )/1*10^-3 <br>
 R<sub>d</sub> = 950Ω <br><br>
+
+---
 
 ### <ins>Component details:<ins>
   <table> 
@@ -74,6 +78,8 @@ in d<sub>B</sub> = 20 * log<sub>10</sub>(  V<sub>out</sub> / V<sub>in</sub> ) <b
 = 20 * log<sub>10</sub>( 1.52 ) <br>
 = 3.63 dB <br><br>
 <br>
+
+---
 
 ## <ins> If The Configure Is Differential Circuit With Resistive Load ? (Resistor Loaded Differential Pair) </ins> <br><br>
 <b>Stage2:</b> <br>
@@ -179,6 +185,8 @@ Bandwidth = High frequency - Low frequency <br>
 A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently.<br><br>
 <b> We can observe the increase in gain from stage 1 circuit. </b> <br><br>
 
+---
+
 ### If there is difference in input voltages ? <br><br>
 <b> a) When V<sub>in1</sub> > V<sub>in2</sub> </b> <br><br>
 ![Image](https://github.com/user-attachments/assets/432c463b-746e-4335-9f63-a20d6870722e) <br><br>
@@ -262,6 +270,8 @@ Bandwidth = High frequency - Low frequency <br>
 A bandwidth of 21.7 GHz means the amplifier can process high-frequency signals efficiently. <br> 
 <b> The gain is almost equal to resistive load differential amplifier. </b> <br><br>
 
+---
+
 <ins>Lets Check the input and output voltage swing of the circuit </ins> <br><br>
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
 = 0.366 + 0.4 <br>
@@ -270,7 +280,7 @@ V<sub>incm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) + V<s
 = 2.2 - ( 0.5m * 1.9K ) + 0.366 <br>
 = 1.616 V <br><br>
 V<sub>ocm(min)</sub> = V<sub>ov1</sub> + V<sub>ov3</sub>   <br>
-= V<sub>gs1</sub> - V<sub>th1</sub> +V<sub>p</sub>  <br>
+= ( V<sub>gs1</sub> - V<sub>th</sub> ) + ( V<sub>ov3</sub> <br>
 = 0.8 - 0.36 + 0.4 <br>
 = 0.84 V <br><br>
 V<sub>ocm(max)</sub> = V<sub>dd</sub> - ( I<sub>d</sub> * R<sub>d</sub> ) <br>
@@ -298,7 +308,7 @@ gm = ( 2 * I<sub>d3</sub> ) / ( V<sub>ov3</sub> ) <br>
 
 ### <ins> Transient Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/2ebe18dc-e63b-45cb-83d4-d5dca3ce8034) <br><br>
-<ins>Calculate Gain<ins> <br>
+<ins>Calculate Gain</ins> <br>
 ![Image](https://github.com/user-attachments/assets/67c54a25-1570-43d3-b659-6ff04716e3fe) <br>
 A<sub>v</sub><br> = ( V<sub>out1</sub> - V<sub>out2</sub> ) / ( V<sub>in1</sub> - V<sub>in2</sub> ) <br>
 = 399m / 99.8m <br>
@@ -314,6 +324,8 @@ To calculate bandwidth:<br>
 <b>Bandwidth</b> = f<sub>H</sub> - f<sub>l</sub> <br>
 = 21.7GHz - 0Hz <br>
 = 21.7Ghz
+
+---
 
 <b> <ins> Check Voltage Swing </ins> </b> <br>
 V<sub>incm(min)</sub> = V<sub>th</sub> + V<sub>p</sub> <br>
@@ -370,16 +382,19 @@ Can observe a symmetric output wave, with voltage of 1.31V. <br><br>
 ### <ins> AC Analysis </ins> <br><br>
 ![Image](https://github.com/user-attachments/assets/2782839d-0302-45ce-a142-9ffe956beea4) <br>
 The observed gain is 9.45d<sub>B</sub>.<br><br>
+To calculate Bandwidth<br>
+9.3 d<sub>B</sub> - 3 d<sub>B</sub> = 6.3d<sub>B</sub> <br>
+<b>Bandwidth</b> = f<sub>H</sub> - f<sub>L</sub> <br>
+= 34.7GHz - 0Hz <br>
+= 34.7GHz <br><br>
 
-
-
-
-
+---
+### <ins> Result </ins> <br>
 
 | **Parameter**          | **Circuit 1**  - Common Source | **Circuit 2**  - Common Source with Degeneration | **Circuit 3**  - Common Source with Current Source | **Circuit 4**  - Common Source with Active Load | **Circuit 5**  - Differential Amplifier |
 |------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
 | **Load Type**         | Resistor (Rd)                            | Resistor (Rd) + Source Degeneration (Rss) | Current Source (High \( r<sub>o</sub> \))          | Active Load (MOSFET)                     | Current Mirror Load                      |
-| **Gain (\( A_v \))**  | Moderate                                | Lower (due to degeneration)             | Highest (due to high \( r<sub>o</sub> \))         | High                                    | Moderate (Lower than Circuit 3 & 4)     |
+| **Gain (\( A<sub>v</sub> \))**  | Moderate                                | Lower (due to degeneration)             | Highest (due to high \( r<sub>o</sub> \))         | High                                    | Moderate (Lower than Circuit 3 & 4)     |
 | **Output Resistance** | Moderate                                | Higher than Circuit 1                   | Very High                               | High                                    | Very High                                |
 | **CMRR**             | Low                                     | Low                                     | Low                                     | Low                                     | High (Best for rejecting noise)         |
 | **Linearity**        | Moderate                                | High (Degeneration improves linearity)  | Moderate                                | Moderate                                | High (Better than all due to symmetry)  |
