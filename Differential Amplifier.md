@@ -401,7 +401,7 @@ To calculate Bandwidth<br>
 | **Output Resistance** | Moderate                                | Higher than Circuit 1                   | Very High                               | High                                    | Very High                                |
 | **CMRR**             | Low                                     | Low                                     | Low                                     | Low                                     | High (Best for rejecting noise)         |
 | **Linearity**        | Moderate                                | High (Degeneration improves linearity)  | Moderate                                | Moderate                                | High (Better than all due to symmetry)  |
-| **Bandwidth**        | Moderate                                | High (Degeneration increases BW)        | Moderate (due to high \( r<sub>o</sub> \))             | Moderate                                | Moderate                                |
+| **Bandwidth**        | Moderate                                | High (Degeneration increases BW)        | Moderate (due to high \( r<sub>o</sub> \))             | Moderate                                | High                               |
 | **Power Consumption**| Low                                     | Moderate                                | High                                    | High                                    | Moderate                                |
 | **Stability**        | Moderate                                | High (Degeneration stabilizes circuit)  | Low (High \( r<sub>o</sub> \) makes it sensitive) | High                                    | High (Best among all)                   |
 
