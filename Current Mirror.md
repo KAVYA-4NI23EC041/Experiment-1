@@ -34,44 +34,87 @@ The effect of channel length modulation can be reduced by increasing the length 
 ![Image](https://github.com/user-attachments/assets/12950c9b-b754-4f13-b911-143fab5a26a1) <br><br>
 
 <ins>Observed Table</ins> <br>
+For I<sub>ref</sub> = 100u <br>
 
   <table> 
 <tr>
- <th><b>I<sub>ref</sub></b></th>
- <th><b>colspan="2">I<sub>out</sub></b></th>
- <th><b>(W/L)<sub>2</sub></b></th>
- <th><b>(W/L)<sub>1</sub></b></th>
- <th><b>V<sub>x</sub></b></th>
- <th><b>V<sub>out</sub></b></th>
+ <th><b>I<sub>out(expected)</sub>(A)</b></th>
+ <th><b>I<sub>out(appeared)</sub>(A)</b></th>
+ <th><b>(W/L)<sub>2</sub>(m)</b></th>
+ <th><b>(W/L)<sub>1</sub>(m)</b></th>
+ <th><b>V<sub>x</sub>(V)</b></th>
+ <th><b>V<sub>out</sub>(V)</b></th>
 </tr>
 <tr>
-    <td>Model</td>
-    <td>CMOSN</td>
+    <td>100µ</td>
+    <td>103.5µ</td>
+    <td>(180n/180n)</td>
+    <td>(180n/180n)</td>
+    <td>1.275V</td>
+    <td>1.715V</td>
 </tr>
 <tr>
-    <td>Mosfet Length</td>
-    <td>180nm</td>
+    <td>100µ</td>
+    <td>100.715µ</td>
+    <td>(500n/500n)</td>
+    <td>(500n/500n)</td>
+    <td>1.4375V</td>
+    <td>1.717V</td>
 </tr>
 <tr>
-    <td>Mosfet Width</td>
-    <td>0.209513µm</td>
+    <td>100µ</td>
+    <td>100.648µ</td>
+    <td>(1µ/1µ)</td>
+    <td>(1µ/1µ)</td>
+    <td>1.3972V</td>
+    <td>1.71747V</td>
 </tr>
 <tr>
-    <td>Threshold Voltage</td>
-    <td> 0.366V</td>
+    <td>200µ</td>
+    <td>197.637µ</td>
+    <td>(1µ/1µ)</td>
+    <td>(1µ/2µ)</td>
+    <td>1.397V</td>
+    <td>1.637V</td>
 </tr>
     <tr>
-      <td>Resistor</td>
-      <td> 2.751kΩ</td>
+      <td>50µ</td>
+    <td>52.13µ</td>
+    <td>(1µ/1µ)</td>
+    <td>(1µ/0.5µ)</td>
+    <td>1.3972V</td>
+    <td>1.75725V</td>
     </tr>
     <tr>
-      <td>Supply Voltage</td>
-      <td> 1.8V</td>
+      <td>100µ</td>
+    <td>101.539µ</td>
+    <td>(1µ/2µ)</td>
+    <td>(1µ/2µ)</td>
+    <td>1.08762V</td>
+    <td>1.71674V</td>
+    </tr>
+     <tr>
+      <td>100µ</td>
+    <td>102.131µ</td>
+    <td>(1µ/3µ)</td>
+    <td>(1µ/3µ)</td>
+    <td>0.95619V</td>
+    <td>1.71625V</td>
     </tr>
 </table> 
 <br>
 
+---
 
+<ins>How Channel Length Modulation Affects the Current?</ins> <br>
+In saturation ( V<sub>ds</sub> > V<sub>gs</sub> - V<sub>th</sub> ), the MOSFET ideally acts as a constant current source. <br>
+However, at higher V<sub>ds</sub>, the depletion region at the drain end of the channel widens, effectively reducing the channel length. <br>
+This reduction in channel length increases the drain current, as the effective channel resistance decreases.
+The relationship considering channel length modulation is:
+<b>I<sub>d</sub> = I<sub>d0</sub> (1+𝜆*V<sub>ds</sub> ) </b> <br>
+where: I<sub>d0</sub>  is the ideal current without channel length modulation.<br>
+λ is the channel length modulation parameter inversely proportional to the effective channel length.<br>
+V<sub>ds</sub> is the drain-to-source voltage.
 
 
 
