@@ -127,6 +127,7 @@ where: I<sub>d0</sub>  is the ideal current without channel length modulation.<b
 
 <p><b>Design a current mirror circuit which has a gain of A<sub>V</sub> = -10V/V, power supply of V<sub>dd</sub> = 1.8V, and power of P <= 1mW. Find reference current (I<sub>ref</sub>), output current (I<sub>d</sub>), and total current (I<sub>total</sub>). Perform DC and AC analysis for mirror ratio 1:1, 1:2. Vary length from 180nm -> 500nm -> 1µm and do the analysis. </b></p> <br><br>
   
+<b>For 1:1 aspect ratio having length of 180nm</b> <br>
 ![Image](https://github.com/user-attachments/assets/80214717-db5a-45b6-8a9c-3fdb596e24bf) <br><br>
 I<sub>total</sub> = ( Power / V<sub>dd</sub> ) <br>
 = ( 1m / 1.8 ) <br>
@@ -193,12 +194,122 @@ I<sub>ref</sub> = I<sub>d</sub> = ( I<sub>total</sub> / 2 ) <br>
 </table>
 <br>
 
-### <ins>DC Analysis </ins> <br>
+### <ins>DC Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/fa0efe8a-a295-4a14-b8aa-1206d7175bdc) <br><br>
 
+From dc analysis: <br>
+V<sub>out</sub> = 0.967276V, which is equal to V<sub>x</sub> <br>
+I<sub>ref</sub> = I<sub>d</sub> = 277µA <br>
 
+<p>For MOSFET 1 the circuit is <b>diode connected</b> hence, it is working in saturation region. MOSFET 2 has V<sub>sd</sub> = 0.8327V, V<sub>sg</sub> = 0.8327V, and V<sub>th</sub> = 0.496V. It satisfies the P-MOS saturation condition V<sub>ds</sub> > V<sub>gs</sub> - V<sub>th</sub>. For MOSFET 3 it has V<sub>ds</sub> = 0.8327V, V<sub>gs</sub> = 0.5697V, hence satisfies the N-MOS saturation condition.</p>
 
+### <ins>Transient Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/ed0d270e-bcfe-499f-bd9c-d32c6d168ecd) <br><br>
+The input voltage given for N-MOS has DC-offset of 0.5697V and amplitude of 10mV with frequency of 1kHz. <br>
+Can observe the output voltage which is 1.237V. 
 
+### <ins>AC Analysis </ins> <br><br>
+![Image](https://github.com/user-attachments/assets/15a42ef8-4801-4ee1-a596-a788cb1070c2) <br><br>
+The obtained gain from the simulation is 29.28d<sub>B</sub>. <br>
+29.28 - 3 = 26.28d<sub>B</sub> <br>
+The frequency for this particular d<sub>B</sub> is 547.86MHz, the bandwidth can be calculated as f<sub>H</sub> - f<sub>L</sub>. <br>
+= 547.86M - 0 <br>
+= 547.86MHz <br>
 
+---
+
+<b>For 1:2 aspect ratio having length of 180nm</b> <br><br>
+
+ <table> 
+<tr>
+ <th><b>Parameters</b></th>
+ <th><b>MOSFET1</b></th>
+ <th><b>MOSFET2</b></th>
+ <th><b>MOSFET3</b></th>
+</tr>
+<tr>
+    <td>Model</td>
+    <td>CMOSP</td>
+    <td>CMOSP</td>
+    <td>CMOSN</td>
+</tr>
+<tr>
+    <td>Mosfet Length</td>
+    <td>180nm</td>
+    <td>180nm</td>
+    <td>180nm</td>
+</tr>
+<tr>
+    <td>Mosfet Width</td>
+    <td>10µm</td>
+    <td>10µm</td>
+    <td>40.495µm</td>
+</tr>
+<tr>
+    <td>Threshold Voltage</td>
+    <td> -0.507V</td>
+    <td> -0.507V</td>
+    <td> 0.496V</td>
+</tr>
+   <tr>
+    <td>Channel Length</td>
+    <td>1.3822</td>
+    <td>1.3822</td>
+    <td>1.3299</td>
+</tr>
+    <tr>
+      <td>Current(I)</td>
+      <td> I<sub>ref</sub> = 0.183mA </td>
+      <td> I<sub>d</sub> = 0.3667mA </td>
+      <td> I<sub>d</sub> = 0.3667mA </td>
+    </tr>
+    <tr>
+      <td>Supply Voltage</td>
+      <td> 1.8V</td>
+      <td> 1.8V</td>
+      <td> --- </td>
+    </tr>
+     <tr>
+      <td>Biased Voltage</td>
+      <td> --- </td>
+      <td> --- </td>
+      <td> 0.5697V</td>
+    </tr>
+</table>
+
+As total current is 0.55mA, it is divided into 3 parts, where 1/3 of current is its reference current I<sub>ref</sub> and remaining is the output current I<sub>d</sub>. <br>
+i.e 0.55m / 3 = 0.183mA. <br>
+Hence, I<sub>ref</sub> = 0.183mA and I<sub>d</sub> = 0.3667mA <br><br>
+
+---
+
+### <ins>DC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/a0321bed-7f5e-4e45-a1d3-34188767f5c3) <br><br>
+From dc analysis: <br>
+V<sub>out</sub> = 0.998V, which is less than V<sub>x</sub> = 1.034V <br>
+I<sub>ref</sub> =  0.1833mA, I<sub>d</sub> = 366.7µA <br><br>
+
+<b><ins> Comparision table </ins></b> <br>
+<table>
+  <tr>
+    <th> Parameters</th>
+    <th> 1:1 </th>
+    <th> 1:2 </th>
+  </tr>
+  <tr>
+    <td> V<sub>out</sub></td>
+    <td> 0.967276V</td>
+    <td> 0.99807V</td>
+  </tr>
+  <tr> 
+    <td> V<sub>x</sub></td>
+    <td> 0.967276V</td>
+    <td> 1.03471V</td>
+  </tr>
+</table>
+
+### <ins>Transient Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/05169fd9-d86e-4801-adfc-570dd4a20d0f) <br><br>
 
 
 
