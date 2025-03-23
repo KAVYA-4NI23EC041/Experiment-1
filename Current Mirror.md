@@ -242,7 +242,7 @@ The frequency for this particular d<sub>B</sub> is 547.86MHz, the bandwidth can 
 <tr>
     <td>Mosfet Width</td>
     <td>10µm</td>
-    <td>10µm</td>
+    <td>20µm</td>
     <td>40.495µm</td>
 </tr>
 <tr>
@@ -310,10 +310,94 @@ I<sub>ref</sub> =  0.1833mA, I<sub>d</sub> = 366.7µA <br><br>
 
 ### <ins>Transient Analysis</ins> <br>
 ![Image](https://github.com/user-attachments/assets/05169fd9-d86e-4801-adfc-570dd4a20d0f) <br><br>
+The input voltage given for N-MOS has DC-offset of 0.5697V and amplitude of 10mV with frequency of 1kHz.<br>
+Can observe the output voltage which is 1.268V.<br>
 
+<b><ins>Comparision for Transient </ins></b> <br>
+![Image](https://github.com/user-attachments/assets/a6260517-ce49-4616-9943-e1574160aa7f) <br><br>
+Can observe small dc shift in the output when there is difference in aspect ratio, otherthan that the output swing is same for both 1:1 and 1:2 aspect ratio. <br>
 
+### <ins>AC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/c7a953de-09c5-44e2-a7aa-c7339f9c516f) <br><br>
+The obtained gain from the simulation is 29.28d<sub>B</sub>. <br>
+29.28 - 3 = 26.28d<sub>B</sub>. <br>
+The frequency for this particular dB is 547.86MHz, the bandwidth can be calculated as f<sub>H</sub> - f<sub>L</sub>. <br>
+= 547.86M - 0 <br>
+= 547.86MHz <br>
 
+<b><ins>Comparision for Transient </ins></b> <br>
+![Image](https://github.com/user-attachments/assets/1412702c-cb4e-47d4-9d35-e07b80d44859) <br><br>
+There is no difference in gain for both circuit, both have 29.28d<sub>B</sub> <br> 
 
+---
+
+<b>For 1:1 aspect ratio having length of 500nm</b> <br>
+
+ <table> 
+<tr>
+ <th><b>Parameters</b></th>
+ <th><b>MOSFET1</b></th>
+ <th><b>MOSFET2</b></th>
+ <th><b>MOSFET3</b></th>
+</tr>
+<tr>
+    <td>Model</td>
+    <td>CMOSP</td>
+    <td>CMOSP</td>
+    <td>CMOSN</td>
+</tr>
+<tr>
+    <td>Mosfet Length</td>
+    <td>500nm</td>
+    <td>500nm</td>
+    <td>500nm</td>
+</tr>
+<tr>
+    <td>Mosfet Width</td>
+    <td>10µm</td>
+    <td>10µm</td>
+    <td>30.86947µm</td>
+</tr>
+<tr>
+    <td>Threshold Voltage</td>
+    <td> -0.507V</td>
+    <td> -0.507V</td>
+    <td> 0.496V</td>
+</tr>
+   <tr>
+    <td>Channel Length</td>
+    <td>1.3822</td>
+    <td>1.3822</td>
+    <td>1.3299</td>
+</tr>
+    <tr>
+      <td>Current(I)</td>
+      <td> I<sub>ref</sub> = 0.227mA </td>
+      <td> I<sub>d</sub> = 0.227mA </td>
+      <td> I<sub>d</sub> = 0.227mA </td>
+    </tr>
+    <tr>
+      <td>Supply Voltage</td>
+      <td> 1.8V</td>
+      <td> 1.8V</td>
+      <td> --- </td>
+    </tr>
+     <tr>
+      <td>Biased Voltage</td>
+      <td> --- </td>
+      <td> --- </td>
+      <td> 0.5697V</td>
+    </tr>
+</table>
+<br>
+
+### <ins>DC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/9ed7cf4a-9688-48a9-97c5-42a90dcc2b20) <br><br>
+From dc analysis:
+Vout = 0.644704V, which is equal to Vx
+Iref = Id = 277µA
+
+For MOSFET 1 the circuit is diode connected hence, it is working in saturation region. MOSFET 2 has Vsd = 1.155V, Vsg = 0.8327V, and Vth = 0.496V. It satisfies the P-MOS saturation condition Vds > Vgs - Vth. For MOSFET 3 it has Vds = 0.8327V, Vgs = 0.5697V, hence satisfies the N-MOS saturation condition.
 
 
 
