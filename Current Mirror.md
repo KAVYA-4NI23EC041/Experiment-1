@@ -325,7 +325,7 @@ The frequency for this particular dB is 547.86MHz, the bandwidth can be calculat
 = 547.86M - 0 <br>
 = 547.86MHz <br>
 
-<b><ins>Comparision for Transient </ins></b> <br>
+<b><ins>Comparision for AC </ins></b> <br>
 ![Image](https://github.com/user-attachments/assets/1412702c-cb4e-47d4-9d35-e07b80d44859) <br><br>
 There is no difference in gain for both circuit, both have 29.28d<sub>B</sub> <br> 
 
@@ -406,8 +406,8 @@ Can observe the output voltage which is 721mV. <br>
 ### <ins>AC Analysis</ins> <br>
 ![Image](https://github.com/user-attachments/assets/9b6aba58-f642-48ae-bd0e-f8c2242bfb2d) <br><br>
 The obtained gain from the simulation is 37.85dB. <br>
-37.85 - 3 = 34.85B<br>
-The frequency for this particular dB is 547.86MHz, the bandwidth can be calculated as fH - fL.<br>
+37.85 - 3 = 34.85dB<br>
+The frequency for this particular dB is 120.748MHz, the bandwidth can be calculated as fH - fL.<br>
 = 120.748M - 0<br>
 = 120.748MHz <br><br>
 
@@ -488,7 +488,7 @@ Iref = 0.1833mA, Id = 366.7µA
   <tr>
     <td> V<sub>out</sub></td>
     <td> 0.644704V</td>
-    <td> 0.0.774599V</td>
+    <td> 0.774599V</td>
   </tr>
   <tr> 
     <td> V<sub>x</sub></td>
@@ -510,13 +510,202 @@ Can observe small dc shift in the output when there is difference in aspect rati
 ### <ins> AC Analysis</ins> <br>
 ![Image](https://github.com/user-attachments/assets/2dbfc5b9-4877-448d-a0e7-9c2f364ea8b8) <br><br>
 The obtained gain from the simulation is 37.97dB. <br>
-37.97 - 3 = 37.97dB.<br>
-The frequency for this particular dB is 547.86MHz, the bandwidth can be calculated as fH - fL. <br>
-= 547.86M - 0 <br>
-= 547.86MHz <br>
+37.97 - 3 = 34.97dB.<br>
+The frequency for this particular dB is 103.26MHz, the bandwidth can be calculated as fH - fL. <br>
+= 103.26M - 0 <br>
+= 103.26MHz <br>
 
 <ins><b>Comparision for AC</ins></b> <br>
+![Image](https://github.com/user-attachments/assets/da3b62c7-b263-47d9-a29f-3b4ab82a6a78)<br><br>
+There is no much difference in gain for both the  circuits.<br>
 
+---
+
+<b>For 1:1 aspect ratio having length of 1µm</b> <br>
+ <table> 
+<tr>
+ <th><b>Parameters</b></th>
+ <th><b>MOSFET1</b></th>
+ <th><b>MOSFET2</b></th>
+ <th><b>MOSFET3</b></th>
+</tr>
+<tr>
+    <td>Model</td>
+    <td>CMOSP</td>
+    <td>CMOSP</td>
+    <td>CMOSN</td>
+</tr>
+<tr>
+    <td>Mosfet Length</td>
+    <td>1µm</td>
+    <td>1µm</td>
+    <td>1µm</td>
+</tr>
+<tr>
+    <td>Mosfet Width</td>
+    <td>10µm</td>
+    <td>10µm</td>
+    <td>92.548µm</td>
+</tr>
+<tr>
+    <td>Threshold Voltage</td>
+    <td> -0.507V</td>
+    <td> -0.507V</td>
+    <td> 0.496V</td>
+</tr>
+   <tr>
+    <td>Channel Length</td>
+    <td>1.3822</td>
+    <td>1.3822</td>
+    <td>1.3299</td>
+</tr>
+    <tr>
+      <td>Current(I)</td>
+      <td> I<sub>ref</sub> = 0.227mA </td>
+      <td> I<sub>d</sub> = 0.227mA </td>
+      <td> I<sub>d</sub> = 0.227mA </td>
+    </tr>
+    <tr>
+      <td>Supply Voltage</td>
+      <td> 1.8V</td>
+      <td> 1.8V</td>
+      <td> --- </td>
+    </tr>
+     <tr>
+      <td>Biased Voltage</td>
+      <td> --- </td>
+      <td> --- </td>
+      <td> 0.5697V</td>
+    </tr>
+</table>
+<br>
+
+### <ins> DC Analysis<?ins> <br>
+![Image](https://github.com/user-attachments/assets/198cacf3-01de-495c-a701-77a4040480d1) <br><br>
+From dc analysis: <br>
+Vout = 0.290177V, which is equal to Vx <br>
+Iref = Id = 277µA<br>
+
+<p>For MOSFET 1 the circuit is diode connected hence, it is working in saturation region. MOSFET 2 has Vsd = 1.50983V, Vsg = 1.50983V, and Vth = 0.496V. It satisfies the P-MOS saturation condition Vds > Vgs - Vth. For MOSFET 3 it has Vds = 1.50983V, Vgs = 0.5697V, hence satisfies the N-MOS saturation condition.</p> 
+
+### <ins>Transient Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/c065a534-9091-4a23-81d7-8759a82adc76) <br><br>
+The input voltage given for N-MOS has DC-offset of 0.5697V and amplitude of 0.1mV with frequency of 1kHz. <br>
+Can observe the output voltage which is 298.8mV. <br>
+
+### <ins>AC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/50c54895-b5df-4f5d-badf-56a68c4b1cf7) <br><br>
+The obtained gain from the simulation is 35.47dB. <br>
+35.47 - 3 = 32.47dB<br>
+The frequency for this particular dB is 98.01MHz, the bandwidth can be calculated as fH - fL.<br>
+= 98.01M - 0 <br>
+= 98.01MHz<br> 
+
+---
+
+<b>For 1:2 aspect ratio having length of 1µm</b> <br>
+ <table> 
+<tr>
+ <th><b>Parameters</b></th>
+ <th><b>MOSFET1</b></th>
+ <th><b>MOSFET2</b></th>
+ <th><b>MOSFET3</b></th>
+</tr>
+<tr>
+    <td>Model</td>
+    <td>CMOSP</td>
+    <td>CMOSP</td>
+    <td>CMOSN</td>
+</tr>
+<tr>
+    <td>Mosfet Length</td>
+    <td>500nm</td>
+    <td>500nm</td>
+    <td>500nm</td>
+</tr>
+<tr>
+    <td>Mosfet Width</td>
+    <td>10µm</td>
+    <td>20µm</td>
+    <td>84.1446µm</td>
+</tr>
+<tr>
+    <td>Threshold Voltage</td>
+    <td> -0.507V</td>
+    <td> -0.507V</td>
+    <td> 0.496V</td>
+</tr>
+   <tr>
+    <td>Channel Length</td>
+    <td>1.3822</td>
+    <td>1.3822</td>
+    <td>1.3299</td>
+</tr>
+    <tr>
+      <td>Current(I)</td>
+      <td> I<sub>ref</sub> = 0.183mA </td>
+      <td> I<sub>d</sub> = 0.3667mA </td>
+      <td> I<sub>d</sub> = 0.3667mA </td>
+    </tr>
+    <tr>
+      <td>Supply Voltage</td>
+      <td> 1.8V</td>
+      <td> 1.8V</td>
+      <td> --- </td>
+    </tr>
+     <tr>
+      <td>Biased Voltage</td>
+      <td> --- </td>
+      <td> --- </td>
+      <td> 0.5697V</td>
+    </tr>
+</table>
+
+### <ins>DC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/d2a12c41-ce1e-4318-9c43-8999e460a4c3) <br><br>
+From dc analysis: <br>
+Vout = 0.472318V, which is less than Vx = 0.51519V <br>
+Iref = 0.1833mA, Id = 366.7µA <br><br>
+
+<b><ins> Comparision table </ins></b> <br>
+<table>
+  <tr>
+    <th> Parameters</th>
+    <th> 1:1 </th>
+    <th> 1:2 </th>
+  </tr>
+  <tr>
+    <td> V<sub>out</sub></td>
+    <td> 0.293177V</td>
+    <td> 0.472318V</td>
+  </tr>
+  <tr> 
+    <td> V<sub>x</sub></td>
+    <td> 0.293177V</td>
+    <td> 0.51519V</td>
+  </tr>
+</table>
+
+### <ins>Transient Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/2d6c394b-e67f-4353-bc9a-197b6b6ea3c8) <br><br>
+The input voltage given for N-MOS has DC-offset of 0.5697V and amplitude of 0.1mV with frequency of 1kHz.<br>
+Can observe the output voltage which is 480.86mV. <br>
+
+<b>Comparision for Transient</b> <br>
+![Image](https://github.com/user-attachments/assets/ac5dd329-143b-4ae4-933f-d0e876df91d7) <br><br>
+Can observe dc shift in the output when there is difference in aspect ratio, otherthan that the output swing is same for both 1:1 and 1:2 aspect ratio. <br>
+
+### <ins>AC Analysis</ins> <br> 
+![Image](https://github.com/user-attachments/assets/81755fe5-4551-4d06-9319-5d30e9556c06) <br><br>
+The obtained gain from the simulation is 39.268dB. <br>
+39.268 - 3 = 36.268dB. <br>
+The frequency for this particular dB is 55.22MHz, the bandwidth can be calculated as fH - fL. <br>
+= 55.22M - 0 <br>
+= 55.22MHz <br>
+
+<b>Comparision for AC</b>
+![Image](https://github.com/user-attachments/assets/a1486a6d-5b88-437f-b957-431eb92fcbed) <br><br>
+There is small difference in gain for both circuit.
 
 
 
