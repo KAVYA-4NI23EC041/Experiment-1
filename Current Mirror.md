@@ -136,6 +136,8 @@ I<sub>ref</sub> = I<sub>d</sub> = ( I<sub>total</sub> / 2 ) <br>
 = 0.55m / 2 <br>
 = 0.277mA <br><br>
 
+![Image](https://github.com/user-attachments/assets/9ca14069-432f-4373-b20d-054d4f518812) <br><br>
+
  <table> 
 <tr>
  <th><b>Parameters</b></th>
@@ -707,6 +709,27 @@ The frequency for this particular dB is 55.22MHz, the bandwidth can be calculate
 ![Image](https://github.com/user-attachments/assets/a1486a6d-5b88-437f-b957-431eb92fcbed) <br><br>
 There is small difference in gain for both circuit.
 
+---
+
+## Part B) <br>
+
+<b>Design the differential amplifier using the same design specification as experiment 3(differential amplifier). Perform DC, Transient, AC analysis for this.</b> <br>
+![Image](https://github.com/user-attachments/assets/62ad1b9a-e5f5-47ec-a96a-53c981827882) <br><br>
+For this circuit biased voltage is replaced by current mirror circuit, with Vdd = 2.2V<br>
+the current through the circuite should be 0.5mA, hence Iss should be of 1mA.<br>
+But as we are supplying Iss through current mirror circuit, which as 1:2 aspect ratio, the Iref which is given to MOSFET 6 in the circuit has 0.5mA. <br><br>
+
+### <ins>DC Analysis</ins><br>
+![Image](https://github.com/user-attachments/assets/1b96b874-39f4-43fd-95ea-151851708f09) <br><br>
+We can observe the Vp and Vout values which is not exactly same as previous experiment, but nearer to that, this variation leads to change in gain of the circuite <br><br>
+
+### <ins>Transient Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/514a7135-ea1d-487f-977d-b37e0cc341fa) <br><br>
+The output voltage is 1.42V <br>
+
+### <ins>AC Analysis</ins> <br>
+![Image](https://github.com/user-attachments/assets/420c3e84-43b5-43c1-b6ef-fc83535e6145) <br><br>
+The gain of the circuit is 29.34dB.
 
 
 
